@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "editor.quickSuggestions": {
+        "strings": "on",
+        "comments": "on"
+    },
+    "tailwindCSS.includeLanguages": {
+        "plantext": "html"
+    },
+    "tailwindCSS.emmetCompletions": true,
+    "tailwindCSS.suggestions": true
+}
