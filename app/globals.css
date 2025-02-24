@@ -125,6 +125,13 @@
   --color-light: #ffffff;
   --color-dark: #282828;
   --color-gray: #e5e5e5;
+
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
 }
 
 @layer base {
