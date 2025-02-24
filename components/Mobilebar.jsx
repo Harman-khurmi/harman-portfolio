@@ -94,7 +94,7 @@ export default function MobileNavbar() {
         style={menuStyle}
         className="relative"
       />
-      {isOpen ? <div className="flex flex-col gap-8 items-start content-start absolute top-35 right-35 text-dark z-100 opacity-100 duration-300 delay-500 transition-all ease-in-out">
+      {isOpen ? <div className="flex flex-col gap-8 items-start content-start absolute top-30 right-30 text-dark z-100 opacity-100 duration-300 delay-500 transition-all ease-in-out">
         <div>
 
           <ul className='flex flex-col items-start gap-8'>
