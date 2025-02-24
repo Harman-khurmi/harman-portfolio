@@ -10,18 +10,18 @@ import Mobilebar from './Mobilebar'
 
 const Header = () => {
     return (
-        <div className='w-full mx-auto flex justify-between items-center py-3 px-8 md:px-10 lg:px-32 '>
+        <div className='w-full mx-auto flex justify-between items-center  py-3 px-8 md:px-10 lg:px-32 min-h-20'>
             <div className='flex mx-auto w-full gap-46 justify-between  '>
                 <div>
                     <Link href={'/'} passHref>
-                        <Image src={logo} className='w-14 md:w-18' alt='logo'></Image>
+                        <Image src={logo} className='w-12 md:w-18 shrink-0' alt='logo'></Image>
                     </Link>
                 </div>
-                <div className='lg:hidden flex relative mt-4 cursor-pointer text-2xl '>
+                <div className='lg:hidden flex relative mt-3 md:mt-7 mr-6 md:mr-10 cursor-pointer  '>
                     {/* <FiMenu /> */}
                     <Mobilebar/>
 
-                </div>
+                </div> 
             </div>
             <div className='hidden lg:flex items-center gap-10'>
 
