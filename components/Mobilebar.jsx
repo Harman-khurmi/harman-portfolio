@@ -83,7 +83,7 @@ export default function MobileNavbar() {
     <div style={{ position: "relative" }} className="mr-10">
       {/* Menu Toggle Button */}
       <button onClick={() => setIsOpen(!isOpen)} style={toggleButtonStyle}>
-        {isOpen ? <RxCross2 className={`bg-light/30 rounded-full text-5xl  py-2 relative z-100 ${isOpen ? "text-dark" : "bg-dark/20"}`} /> : <HiOutlineMenuAlt3 className={` text-5xl bg-second/20 rounded-full  py-2 relative z-100 ${isOpen ? "text-dark" : ""}`} />}
+        {isOpen ? <RxCross2 className={`bg-light/30 rounded-full text-4xl py-2 relative z-100 ${isOpen ? "text-dark" : "bg-dark/20"}`} /> : <HiOutlineMenuAlt3 className={` text-4xl bg-second/20 rounded-full  py-2 relative z-100 ${isOpen ? "text-dark" : ""}`} />}
       </button>
 
       {/* Full-screen Menu */}
@@ -94,17 +94,17 @@ export default function MobileNavbar() {
         style={menuStyle}
         className="relative"
       />
-      {isOpen ? <div className="absolute top-50 right-20 text-dark z-100">
-        <ul className='flex flex-col gap-8'>
+      {isOpen ? <div className="absolute top-50 right-20 text-dark z-100 opacity-100 duration-300 delay-500 transition-all ease-in-out">
+        <ul className='flex flex-col items-start gap-8'>
           {routes.map((route, index) => (
             <Button variant="link" key={index} className={`text-light text-4xl`}>
-              <Link href={route.path} className={`${pathname === route.path ? " border-light !text-light font-bold" : "!text-dark"} cursor-pointer transition-all  ease-in-out text-!primary  hover:!text-light hover:font-bold m-2 py-2`}>
+              <Link href={route.path} className={`${pathname === route.path ? " border-light border-b-2 !text-light font-bold" : "!text-dark"} cursor-pointer transition-all  ease-in-out text-!primary  hover:!text-light hover:font-bold m-2 py-2`}>
                 {route.name}
               </Link>
             </Button>
           ))}
         </ul>
-      </div> : ""}
+      </div> : <div className="opacity-0"></div>}
     </div>
   );
 }
