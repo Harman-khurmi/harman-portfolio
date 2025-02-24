@@ -39,7 +39,7 @@ const Home = () => {
               <div className='w-full hidden lg:flex cursor-crosshair'><BubbleText /></div>
             </div>
             <div className='text-sm md:text-lg lg:text-xl justify-center lg:text-left max-w-[24rem] md:max-w-[32rem] text-center lg:max-w-[40rem]'>
-              <p>I specialized in building scalable and user-friendly web applications. Exploring the techscape with a designer's eye and a coder's heart, I create magic in the pixels.</p>
+              <p>I specialize in building scalable and user-friendly web applications. Exploring the techscape with a designer's eye and a coder's heart, I create magic in the pixels.</p>
             </div>
             <div className='mt-4'>
               <Button variant="outline" className={`flex gap-2 text-lg lg:text-xl rounded-3xl border-2 border-dashed border-second bg-white lg:px-10 lg:py-6 py-5 font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-lg hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none`}>

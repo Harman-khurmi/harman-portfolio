@@ -12,8 +12,8 @@ const Photo = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
-          className='mix-blend-lighten absolute'>
-          <Image src={harman} priority className='w-72 md:w-80 lg:w-96 mix-blend-lighten object-contain' alt='profile pic' />
+          className='mix-blend-multiply dark:mix-blend-lighten absolute'>
+          <Image src={harman} priority className='w-72 md:w-80 lg:w-96 object-contain' alt='profile pic' />
         </motion.div>
         {/* circle */}
 
