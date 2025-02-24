@@ -14,7 +14,6 @@ const raleway = Raleway({
 export const metadata = {
   title: "Harman Khurmi",
   description: "Harman Khurmi's personal website",
-  image: { src: logo, alt: "Harman Khurmi" },
   url: "https://harman.khurmi.dev",
   type: "website",
   siteName: "Harman Khurmi",
@@ -24,9 +23,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="shortcut icon" href="/logo.svg" />
-      </Head>
       <body className={`${raleway.variable}`}>
         <ThemeProvider
           attribute="class"
