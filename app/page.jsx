@@ -4,20 +4,20 @@ import styles from "./bubble.module.css";
 import { Button } from "@/components/ui/button"
 import { HiDownload } from "react-icons/hi";
 import { TypeAnimation } from 'react-type-animation';
-// import { Link } from 'lucide-react';
 import Link from 'next/link'
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { BsTwitterX } from "react-icons/bs";
 import { FaBehance } from "react-icons/fa6";
 import { TbBrandFigma } from "react-icons/tb";
+import Photo from '@/components/Photo';
 
 const Home = () => {
   return (
     <>
       <section className='h-full text-dark dark:text-light'>
         <div className='flex lg:flex-row flex-col gap-10 lg:gap-1 mx-6 md:container items-center lg:items-start md:mx-auto lg:justify-evenly mt-12'>
-          <div className='gap-3 flex flex-col items-center lg:items-start'>
+          <div className='order-2 lg:order-none gap-3 flex flex-col items-center lg:items-start'>
             <TypeAnimation
               sequence={[
                 "Software Developer", 3000,
@@ -67,7 +67,9 @@ const Home = () => {
             </div>
 
           </div>
-          <div className='h-80 w-80 bg-second'>pic</div>
+          <div className='order-1 lg:order-none relative'>
+            <Photo />
+          </div>
         </div>
       </section>
     </>
