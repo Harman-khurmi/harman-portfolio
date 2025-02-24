@@ -11,13 +11,14 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaBehance } from "react-icons/fa6";
 import { TbBrandFigma } from "react-icons/tb";
 import Photo from '@/components/Photo';
+import Stats from '@/components/Stats';
 
 const Home = () => {
   return (
     <>
-      <section className='h-full text-dark dark:text-light'>
+      <section className='h-full text-dark dark:text-light flex lg:mx-6'>
         <div className='flex lg:flex-row flex-col gap-10 lg:gap-1 mx-6 md:container items-center lg:items-start md:mx-auto lg:justify-evenly mt-12'>
-          <div className='order-2 lg:order-none gap-3 flex flex-col items-center lg:items-start'>
+          <div className='order-2 lg:order-none gap-6 flex flex-col items-center lg:items-start'>
             <TypeAnimation
               sequence={[
                 "Software Developer", 3000,
@@ -48,7 +49,36 @@ const Home = () => {
             </div>
 
             {/* socials */}
-            <div className='flex flex-wrap items-center justify-center gap-7 md:gap-9 mt-6'>
+
+            <div className='lg:hidden mx-auto flex flex-wrap items-center justify-center gap-7 md:gap-9 mt-6'>
+              <div className='flex gap-2 lg:text-xl font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-xl hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-xl  bg-light border-2 border-second border-dotted p-2 md:p-3 rounded-full md:rounded-3xl'>
+                <Link href='https://www.linkedin.com/in/harmankhurmi/'><FaLinkedinIn className='text-dark' /></Link>
+              </div>
+              <div className='flex gap-2 lg:text-xl font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-xl hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-xl  bg-light border-2 border-second border-dotted p-2 md:p-3 rounded-3xl'>
+                <Link href='https://github.com/Harman-khurmi'><FiGithub className='text-dark' /></Link>
+              </div>
+              <div className='flex gap-2 lg:text-xl font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-xl hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-xl  bg-light border-2 border-second border-dotted p-2 md:p-3 rounded-3xl'>
+                <Link href='https://x.com/HarmanKhurmi3'><BsTwitterX className='text-dark' /></Link>
+              </div>
+              <div className='flex gap-2 lg:text-xl font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-xl hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-xl  bg-light border-2 border-second border-dotted p-2 md:p-3 rounded-3xl'>
+                <Link href='https://www.figma.com/@harmankhurmi'><TbBrandFigma className='text-dark' /></Link>
+              </div>
+              <div className='flex gap-2 lg:text-xl font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-xl hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-xl  bg-light border-2 border-second border-dotted p-2 md:p-3 rounded-3xl'>
+                <Link href='https://www.behance.net/harmankhurmi'><FaBehance className='text-dark' /></Link>
+              </div>
+            </div>
+            
+          <div>
+            <Stats/>
+          </div>
+
+          </div>
+          <div className='order-1 lg:order-none relative'>
+            <Photo /> 
+          </div>
+        </div>
+
+          <div className=' order-3  hidden lg:flex flex-col ml-10 mr-0 items-center justify-center gap-7 md:gap-9 mt-6'>
               <div className='flex gap-2 lg:text-xl font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-xl hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-xl  bg-light border-2 border-second border-dotted p-2 md:p-3 rounded-full md:rounded-3xl'>
                 <Link href='https://www.linkedin.com/in/harmankhurmi/'><FaLinkedinIn className='text-dark' /></Link>
               </div>
@@ -66,11 +96,6 @@ const Home = () => {
               </div>
             </div>
 
-          </div>
-          <div className='order-1 lg:order-none relative'>
-            <Photo />
-          </div>
-        </div>
       </section>
     </>
   )
