@@ -1,11 +1,12 @@
+'use client'
 import React from 'react'
 import CountUp from 'react-countup'
 
 const stats = [
-  { title: 'Projects Completed', count: 10 },
+  { title: 'Projects Completed', count: 12 },
   { title: 'Years of Experience', count: 3 },
-  { title: 'Technology mastered', count: 16 },
-  { title: 'Code Commits', count: 550 },
+  { title: 'Technologies mastered', count: 14 },
+  { title: 'Code Commits', count: 120 },
 ]
 const Stats = () => {
   return (
