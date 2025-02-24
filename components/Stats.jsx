@@ -9,9 +9,10 @@ const stats = [
 ]
 const Stats = () => {
   return (
-    <div className='container mx-auto flex gap-10 items-center justify-center mt-6 flex-wrap'>
+    // grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 w-full  alternate
+    <div className='container mx-auto flex flex-wrap lg:flex-nowrap justify-center mt-6'>
       {stats.map((stat, idx) => (
-        <div key={idx} className='flex gap-6 items-center justify-items-start'>
+        <div key={idx} className='flex gap-6 p-4 items-center'>
           <CountUp end={stat.count} duration={10} delay={1} separator=',' className='text-4xl font-bold dark:text-second' />
           <h3 className='text-md dark:text-light'>{stat.title}</h3>
         </div>

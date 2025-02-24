@@ -78,7 +78,7 @@ const Home = () => {
           </div>
         </div>
 
-          <div className=' order-3  hidden lg:flex flex-col ml-10 mr-0 items-center justify-center gap-7 md:gap-9 mt-6'>
+          <div className=' order-3  hidden lg:flex flex-col ml-10 mr-0 items-center justify-center gap-7 md:gap-9'>
               <div className='flex gap-2 lg:text-xl font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-xl hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-xl  bg-light border-2 border-second border-dotted p-2 md:p-3 rounded-full md:rounded-3xl'>
                 <Link href='https://www.linkedin.com/in/harmankhurmi/'><FaLinkedinIn className='text-dark' /></Link>
               </div>
