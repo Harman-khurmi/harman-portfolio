@@ -37,7 +37,7 @@ const services = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
-          className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 container mx-auto items-center justify-center'>
+          className='grid grid-cols-1 md:grid-cols-2 gap-6 my-4.5 container mx-auto items-center justify-center'>
 
           {service.map((item) => (
             <motion.div
