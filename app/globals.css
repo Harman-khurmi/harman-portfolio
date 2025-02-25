@@ -143,3 +143,9 @@
     font-family: var(--font-family);
   }
 }
+
+/* styles/globals.css */
+.stroke-text {
+  -webkit-text-stroke: 1px #13b0fe; /* Adjust thickness and color as needed */
+  color: transparent; /* This ensures only the stroke is visible */
+}

@@ -6,3 +6,4 @@ Technologies Used :
 3. TAILWINDCSS 4.0
 4. SHADCN UI
 5. REACT-TYPE-ANIMATION
+6. hover.dev - Links, Cards, others>logo-origami

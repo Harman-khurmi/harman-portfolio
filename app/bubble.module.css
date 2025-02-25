@@ -1,8 +1,8 @@
 .hoverText {
   transition:
-    0.18s font-weight,
+    0.3s font-weight,
     
-    0.18s color;
+    0.2s color;
 }
 
 .hoverText:hover {

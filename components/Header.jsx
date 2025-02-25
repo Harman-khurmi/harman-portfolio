@@ -19,7 +19,7 @@ import Mobilebar from './Mobilebar'
 const Header = () => {
     const { setTheme } = useTheme()
     return (
-        <div className='w-full mx-auto flex justify-between items-center py-3  md:py-4 px-8 md:px-10 lg:px-32 min-h-20'>
+        <div className='w-full mx-auto flex justify-between items-center py-3  md:py-5 px-8 md:px-10 lg:px-32 min-h-20'>
             <div className='flex mx-auto w-full gap-46 justify-between  '>
                 <div>
                     <Link href={'/'} passHref>

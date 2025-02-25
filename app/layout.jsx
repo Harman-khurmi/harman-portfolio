@@ -2,8 +2,6 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider"
-import logo from "../public/logo.svg";
-import Head from 'next/head';
 
 const raleway = Raleway({
   variable: "--font-raleway",
