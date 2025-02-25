@@ -111,9 +111,9 @@ export default Home;
 
 const BubbleText = () => {
   return (
-    <h2 className="text-center text-4xl lg:text-6xl dark:font-thin font-bold max-w-[35rem] text-second">
+    <h2 className="text-center text-4xl lg:text-6xl dark:font-thin font-bold  text-second">
       {"Harmanpreet Singh".split("").map((child, idx) => (
-        <span className={`${styles.hoverText} duration-300 delay-200 transform transition-all`} key={idx}>
+        <span className={`${styles.hoverText} duration-300 delay-200 transform transition-all min-w-1`} key={idx}>
           {child}
         </span>
       ))}

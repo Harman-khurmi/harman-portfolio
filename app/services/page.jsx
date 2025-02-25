@@ -37,13 +37,14 @@ const services = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
-          className='grid grid-cols-1 md:grid-cols-2 gap-6 my-4.5 container mx-auto items-center justify-center'>
+          className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 my-10 lg:my-4.5 container mx-auto'>
 
           {service.map((item) => (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
-              className='flex flex-col md:p-6 lg:p-8 gap-4 rounded-3xl group mx-6'
+              className='flex flex-col p-8 gap-4 rounded-3xl group mx-6 bg-light dark:bg-dark shadow-third dark:shadow-third-dark transition-all duration-300 hover:shadow-[4px_4px_0px] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-lg
+              focus:shadow-[4px_4px_0px] focus:translate-x-[-4px] focus:translate-y-[-4px] border-dark border-2'
               key={item.num}>
 
               {/*  bg-light dark:bg-dark shadow-third dark:shadow-third-dark transition-all duration-300 hover:shadow-[4px_4px_0px] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-lg */}
