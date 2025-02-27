@@ -43,7 +43,7 @@ const services = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
-              className='flex flex-col p-8 gap-4 rounded-3xl group mx-6 bg-light dark:bg-dark shadow-third dark:shadow-third-dark transition-all duration-300 hover:shadow-[4px_4px_0px] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-lg
+              className='flex flex-col p-8 gap-4 rounded-3xl group mx-6 lg:mx-0 bg-light dark:bg-dark shadow-third dark:shadow-third-dark transition-all duration-300 hover:shadow-[4px_4px_0px] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-lg
               focus:shadow-[4px_4px_0px] focus:translate-x-[-4px] focus:translate-y-[-4px] border-dark border-2'
               key={item.num}>
 
