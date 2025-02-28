@@ -14,6 +14,8 @@ import { FaRegHandPointer } from "react-icons/fa";
 
 import { LuMousePointerClick } from "react-icons/lu";
 import { GiClick } from "react-icons/gi";
+import ClipPathLinks from "@/components/ClipPathLinks";
+import { FaReact } from "react-icons/fa";
 
 const resume = () => {
   return (
@@ -21,7 +23,7 @@ const resume = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
-        className='my-10 lg:my-6 container mx-auto'
+        className='mt-8 container mx-auto'
       >
         <Tabs defaultValue="Experience" className="w-full min-h-full container mx-auto">
           <div className='gap-4 grid grid-cols-1 md:grid-cols-3 md:gap-6  lg:my-4.5'>
@@ -44,7 +46,7 @@ const resume = () => {
                   animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
                   className='flex w-full items-center justify-center content-center py-10'
                 >
-                  <ScrollArea className="h-[24rem] w-full flex justify-center content-center">
+                  <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
                     <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
                       {experience.exp.map((item, index) => (
                         <TiltCard key={index} item={item} />
@@ -53,8 +55,47 @@ const resume = () => {
                   </ScrollArea>
                 </motion.div>
               </TabsContent>
-              <TabsContent value="Education">Change your password here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus assumenda asperiores natus, repudiandae illo sunt alias vero quis obcaecati, blanditiis, saepe totam magnam! Tempora provident ad aliquam magni adipisci eos!</TabsContent>
-              <TabsContent value="Skills">Make changes to your account here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus assumenda asperiores natus, repudiandae illo sunt alias vero quis obcaecati, blanditiis, saepe totam magnam! Tempora provident ad aliquam magni adipisci eos!</TabsContent>
+
+              <TabsContent value="Education">
+                <div className='flex flex-col gap-4 items-center md:items-start'>
+                  <h1 className='text-3xl'>{education.title}</h1>
+                  <p className='text-md text-justify'>{education.description}</p>
+                </div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
+                  className='flex w-full items-center justify-center content-center py-10'
+                >
+                  <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
+                    <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
+                      {education.edu.map((item, index) => (
+                        <TiltCardEdu key={index} item={item} />
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </motion.div>
+              </TabsContent>
+
+              <TabsContent value="Skills">
+              <div className='flex flex-col gap-4 items-center md:items-start'>
+                  <h1 className='text-3xl'>{skills.title}</h1>
+                  <p className='text-md text-justify'>{skills.description}</p>
+                </div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
+                  className='flex w-full items-center justify-center content-center py-10'
+                >
+                  <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
+                    <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
+                      {skills.logos.map((item, index) => (
+                        <ClipPathLinks key={index} item={item}/>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </motion.div>
+              </TabsContent>
+
               <TabsContent value="About me">Change your password here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus assumenda asperiores natus, repudiandae illo sunt alias vero quis obcaecati, blanditiis, saepe totam magnam! Tempora provident ad aliquam magni adipisci eos!</TabsContent>
             </div>
           </div>
@@ -99,10 +140,9 @@ const experience = {
 }
 
 const education = {
-  icon: "",
   title: 'My Education',
   description: "I have a strong educational background in computer science and design. I have completed various courses and certifications to enhance my skills and knowledge.",
-  exp: [
+  edu: [
     {
       institution: 'University Name',
       degree: 'Bachelor of Science in Computer Science',
@@ -119,42 +159,18 @@ const education = {
 }
 
 const skills = {
-  icon: "",
   title: 'My Skills',
   description: "I have a diverse set of skills in web development, mobile development, UI/UX design, and graphic design. I am proficient in various programming languages and design tools.",
-  exp: [
+  logos: [
     {
-      skill: 'HTML',
-      level: 'Expert',
+      skill: "FaReact",
+      // level: 'Expert',
     },
     {
-      skill: 'CSS',
-      level: 'Expert',
+      skill: "FaReact",
+      // level: 'Expert',
     },
-    {
-      skill: 'JavaScript',
-      level: 'Advanced',
-    },
-    {
-      skill: 'Dart',
-      level: 'Intermediate',
-    },
-    {
-      skill: 'Flutter',
-      level: 'Intermediate',
-    },
-    {
-      skill: 'Figma',
-      level: 'Advanced',
-    },
-    {
-      skill: 'Adobe Illustrator',
-      level: 'Advanced',
-    },
-    {
-      skill: 'Adobe Photoshop',
-      level: 'Advanced',
-    },
+
   ],
 }
 
@@ -225,7 +241,7 @@ const TiltCard = ({ item }) => {
         transformStyle: "preserve-3d",
         transform,
       }}
-      className="relative h-56 md:h-72 rounded-xl bg-gradient-to-br from-third to-fourth"
+      className="relative h-48 md:h-60 rounded-xl bg-gradient-to-br from-third to-fourth"
     >
       <div
         style={{
@@ -247,72 +263,108 @@ const TiltCard = ({ item }) => {
             <div className="blink"></div>
             <p className="text-fourth">{item.duration}</p>
           </div>
-            <p className="">{item.company}</p>
+          <p className="">{item.company}</p>
 
-        <LuMousePointerClick
-          style={{
-            transform: "translateZ(75px)",
-          }}
-          className="absolute  -bottom-10 -right-10 mx-auto text-3xl lg:text-4xl text-fourth"
+          <LuMousePointerClick
+            style={{
+              transform: "translateZ(75px)",
+            }}
+            className="absolute -bottom-7 -right-8  md:-bottom-10 md:-right-16 mx-auto text-3xl lg:text-4xl text-fourth"
           />
-        {/* <GiClick
+          {/* <GiClick
           style={{
             transform: "translateZ(75px)",
           }}
           className="absolute lg:hidden not-hidden bottom-2  -rotate-6 lg:-rotate-30  right-2 mx-auto text-3xl lg:text-4xl text-fourth"
           /> */}
-          </div>
+        </div>
       </div>
     </motion.div>
   );
 };
 
-// function BlinkingDot() {
-//   // Define the ping effect: expands and fades out smoothly in a loop
-//   const pingVariants = {
-//     initial: { scale: 0.2, opacity: 0.8 },
-//     animate: {
-//       scale: 2, // Adjusted for a larger expanding circle
-//       opacity: 0,
-//       transition: {
-//         duration: 3,
-//         repeat: Infinity,
-//         ease: "easeInOut",
-//       },
-//     },
-//   };
 
-//   // Define the blinking effect: cycles opacity smoothly
-//   const blinkVariants = {
-//     initial: { opacity: 1 },
-//     animate: {
-//       opacity: [1, 0.5, 1],
-//       transition: {
-//         duration: 1.5,
-//         times: [0, 0.5, 1],
-//         repeat: Infinity,
-//         ease: "easeInOut",
-//       },
-//     },
-//   };
+const TiltCardEdu = ({ item }) => {
+  const ref = useRef(null);
 
-//   return (
-//     <div className="relative flex items-center justify-center">
-//       {/* Ping circle */}
-//       <motion.div
-//         className="absolute rounded-full bg-blue-400 h-3 w-3"
-//         variants={pingVariants}
-//         initial="initial"
-//         animate="animate"
-//       />
-//       <motion.div
-//         className="absolute rounded-full bg-blue-500 h-1.5 w-1.5"
-//         variants={blinkVariants}
-//         initial="initial"
-//         animate="animate"
-//       />
-//       {/* Blinking dot */}
-//     </div>
-//   );
-// }
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
+  const xSpring = useSpring(x);
+  const ySpring = useSpring(y);
+
+  const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+
+  const handleMouseMove = (e) => {
+    if (!ref.current) return [0, 0];
+
+    const rect = ref.current.getBoundingClientRect();
+
+    const width = rect.width;
+    const height = rect.height;
+
+    const mouseX = (e.clientX - rect.left) * 32.5;
+    const mouseY = (e.clientY - rect.top) * 32.5;
+
+    const rX = (mouseY / height - 32.5 / 2) * -1;
+    const rY = mouseX / width - 32.5 / 2;
+
+    x.set(rX);
+    y.set(rY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transformStyle: "preserve-3d",
+        transform,
+      }}
+      className="relative h-48 md:h-60 rounded-xl bg-gradient-to-br from-third to-fourth"
+    >
+      <div
+        style={{
+          transform: "translateZ(75px)",
+          transformStyle: "preserve-3d",
+        }}
+        className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg p-4 md:p-2"
+      >
+        {/* content */}
+        <div
+          style={{
+            transform: "translateZ(50px)",
+          }}
+          className=" relative flex flex-col text-lg font-bold text-black gap-2 items-center justify-center text-center"
+        >
+          <h1 className="text-xl md:text-2xl">{item.degree}</h1>
+          <div className="flex gap-3 items-center">
+
+            <div className="blink"></div>
+            <p className="text-fourth">{item.duration}</p>
+          </div>
+          <p className="">{item.institution}</p>
+
+          <LuMousePointerClick
+            style={{
+              transform: "translateZ(75px)",
+            }}
+            className="absolute -bottom-3 -right-2  md:-bottom-6 md:-right-0 mx-auto text-3xl lg:text-4xl text-fourth"
+          />
+          {/* <GiClick
+          style={{
+            transform: "translateZ(75px)",
+          }}
+          className="absolute lg:hidden not-hidden bottom-2  -rotate-6 lg:-rotate-30  right-2 mx-auto text-3xl lg:text-4xl text-fourth"
+          /> */}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
