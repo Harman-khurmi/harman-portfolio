@@ -16,6 +16,7 @@ import { LuMousePointerClick } from "react-icons/lu";
 import { GiClick } from "react-icons/gi";
 import ClipPathLinks from "@/components/ClipPathLinks";
 import { FaReact } from "react-icons/fa";
+import { HoverBorderGradient } from "../../components/ui/hover-border-gradient";
 
 const resume = () => {
   return (
@@ -46,10 +47,20 @@ const resume = () => {
                   animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
                   className='flex w-full items-center justify-center content-center py-10'
                 >
+                  {/* grid grid-cols-1 lg:grid-cols-2 */}
                   <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
-                    <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
+                    <div className='flex flex-wrap w-full items-center justify-start mx-auto gap-8'>
                       {experience.exp.map((item, index) => (
-                        <TiltCard key={index} item={item} />
+                        <HoverBorderGradient
+                          containerClassName="rounded-md"
+                          key={index}
+                          as="button"
+                          className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-6 px-12"
+                        >
+                          <AceternityLogo key={index} item={item}/>
+                        
+                        </HoverBorderGradient>
+                        // <TiltCard key={index} item={item} />
                       ))}
                     </div>
                   </ScrollArea>
@@ -77,7 +88,7 @@ const resume = () => {
               </TabsContent>
 
               <TabsContent value="Skills">
-              <div className='flex flex-col gap-4 items-center md:items-start'>
+                <div className='flex flex-col gap-4 items-center md:items-start'>
                   <h1 className='text-3xl'>{skills.title}</h1>
                   <p className='text-md text-justify'>{skills.description}</p>
                 </div>
@@ -89,7 +100,7 @@ const resume = () => {
                   <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
                     <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
                       {skills.logos.map((item, index) => (
-                        <ClipPathLinks key={index} item={item}/>
+                        <ClipPathLinks key={index} item={item} />
                       ))}
                     </div>
                   </ScrollArea>
@@ -197,6 +208,24 @@ const aboutMe = {
     },
   ],
 }
+
+const AceternityLogo = ({ item }) => {
+  return (
+    <>
+      <div
+          className="flex flex-col text-lg font-bold gap-2 items-center p-4"
+        >
+          <h1 className="text-xl md:text-2xl">{item.position}</h1>
+          <div className="flex gap-3 items-center">
+
+            {/* <div className="blink"></div> */}
+            <p className="text-fourth">{item.duration}</p>
+          </div>
+          <p className="">{item.company}</p>
+          </div>
+    </>
+  );
+};
 
 const TiltCard = ({ item }) => {
   const ref = useRef(null);
@@ -368,3 +397,4 @@ const TiltCardEdu = ({ item }) => {
     </motion.div>
   );
 };
+
