@@ -47,9 +47,9 @@ const resume = () => {
                   animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
                   className='flex w-full items-center justify-center content-center py-10'
                 >
-                  {/* grid grid-cols-1 lg:grid-cols-2 */}
-                  <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
-                    <div className='flex flex-wrap w-full items-center justify-start mx-auto gap-8'>
+                  {/*  */}
+                  <ScrollArea className="h-[19rem] w-full flex justify-center content-center md:space-x-0">
+                    <div className='grid grid-cols-1 lg:grid-cols-2 items-center justify-start w-fit gap-8 '>
                       {experience.exp.map((item, index) => (
                         <HoverBorderGradient
                           containerClassName="rounded-md"
@@ -57,7 +57,7 @@ const resume = () => {
                           as="button"
                           className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-6 px-12"
                         >
-                          <AceternityLogo key={index} item={item}/>
+                          <AceternityLogo key={index} item={item} className=""/>
                         
                         </HoverBorderGradient>
                         // <TiltCard key={index} item={item} />
