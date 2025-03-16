@@ -11,12 +11,40 @@ import { FiMousePointer } from "react-icons/fi";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { FaRegHandPointer } from "react-icons/fa";
-
 import { LuMousePointerClick } from "react-icons/lu";
 import { GiClick } from "react-icons/gi";
 import ClipPathLinks from "@/components/ClipPathLinks";
 import { FaReact } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
+import { FaHtml5 } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { FaBootstrap } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiExpress } from "react-icons/si";
+import { IoLogoNodejs } from "react-icons/io";
+import { FaPython } from "react-icons/fa";
+import { FaVuejs } from "react-icons/fa";
+import { RiNextjsFill } from "react-icons/ri";
+import { TbBrandCpp } from "react-icons/tb";
+
+
 import { HoverBorderGradient } from "../../components/ui/hover-border-gradient";
+
+// Mapping of icon libraries
+const iconLibraries = {
+  fa: require("react-icons/fa"),
+  si: require("react-icons/si"),
+  io5: require("react-icons/io5"),
+  ri: require("react-icons/ri"),
+  io: require("react-icons/io"),
+  tb: require("react-icons/tb"),
+  // Add other libraries as needed
+};
+
+const getIconComponent = (library, iconName) => {
+  const IconLibrary = iconLibraries[library];
+  return IconLibrary ? IconLibrary[iconName] : null;
+};
 
 const resume = () => {
   return (
@@ -47,9 +75,8 @@ const resume = () => {
                   animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
                   className='flex w-full items-center justify-center content-center py-10'
                 >
-                  {/*  */}
-                  <ScrollArea className="h-[19rem] w-full flex justify-center content-center md:space-x-0">
-                    <div className='grid grid-cols-1 lg:grid-cols-2 items-center justify-start w-fit gap-8 '>
+                  <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
+                    <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
                       {experience.exp.map((item, index) => (
                         <HoverBorderGradient
                           containerClassName="rounded-md"
@@ -57,10 +84,8 @@ const resume = () => {
                           as="button"
                           className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-6 px-12"
                         >
-                          <AceternityLogo key={index} item={item} className=""/>
-                        
+                          <AceternityExperience key={index} item={item} className="" />
                         </HoverBorderGradient>
-                        // <TiltCard key={index} item={item} />
                       ))}
                     </div>
                   </ScrollArea>
@@ -80,7 +105,14 @@ const resume = () => {
                   <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
                     <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
                       {education.edu.map((item, index) => (
-                        <TiltCardEdu key={index} item={item} />
+                        <HoverBorderGradient
+                          containerClassName="rounded-md"
+                          key={index}
+                          as="button"
+                          className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-6 px-12"
+                        >
+                          <AceternityEducation key={index} item={item} className="" />
+                        </HoverBorderGradient>
                       ))}
                     </div>
                   </ScrollArea>
@@ -98,9 +130,16 @@ const resume = () => {
                   className='flex w-full items-center justify-center content-center py-10'
                 >
                   <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
-                    <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
-                      {skills.logos.map((item, index) => (
-                        <ClipPathLinks key={index} item={item} />
+                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center content-center place-content-center mx-auto gap-4'>
+                      {skills.skill.map((item, index) => (
+                        <HoverBorderGradient
+                          containerClassName="rounded-md"
+                          key={index}
+                          as="button"
+                          className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full "
+                        >
+                          <AceternitySkills key={index} item={item} className="" />
+                        </HoverBorderGradient>
                       ))}
                     </div>
                   </ScrollArea>
@@ -124,7 +163,7 @@ const experience = {
   description: "I have 3+ years of experience in web development, mobile development, UI/UX design, and graphic design. I have worked on various projects and have gained valuable experience in creating user-friendly applications. I am proficient in HTML, CSS, JavaScript, Dart, Flutter, Figma, Adobe Illustrator, and Adobe Photoshop. I am always looking for new challenges and opportunities to grow as a developer.",
   exp: [
     {
-      company: 'Company Name',
+      company: 'Digital Alpha Technologies',
       position: 'Web Developer',
       duration: '2020 - Present',
       description: 'I create responsive websites that allow the user to experience your website in the best and most appropriate way.',
@@ -172,17 +211,21 @@ const education = {
 const skills = {
   title: 'My Skills',
   description: "I have a diverse set of skills in web development, mobile development, UI/UX design, and graphic design. I am proficient in various programming languages and design tools.",
-  logos: [
-    {
-      skill: "FaReact",
-      // level: 'Expert',
-    },
-    {
-      skill: "FaReact",
-      // level: 'Expert',
-    },
+  skill : [
+    {library: "fa", title : "FaHtml5"},
+    {library: "fa", title : "FaCss3Alt"},
+    {library: "io5", title : "IoLogoJavascript"},
+    {library: "fa", title : "FaReact"},
+    {library: "ri", title : "RiNextjsFill"},
+    {library: "fa", title : "FaVuejs"},
+    {library: "tb", title : "TbBrandCpp"},
+    {library: "fa", title : "FaPython"},
+    {library: "io", title : "IoLogoNodejs"},
+    {library: "si", title : "SiExpress"},
+    {library: "ri", title : "RiTailwindCssFill"},
+    {library: "fa", title : "FaBootstrap"},
 
-  ],
+  ]
 }
 
 const aboutMe = {
@@ -209,192 +252,47 @@ const aboutMe = {
   ],
 }
 
-const AceternityLogo = ({ item }) => {
+const AceternityExperience = ({ item }) => {
   return (
     <>
       <div
-          className="flex flex-col text-lg font-bold gap-2 items-center p-4"
-        >
-          <h1 className="text-xl md:text-2xl">{item.position}</h1>
-          <div className="flex gap-3 items-center">
-
-            {/* <div className="blink"></div> */}
-            <p className="text-fourth">{item.duration}</p>
-          </div>
-          <p className="">{item.company}</p>
-          </div>
+        className="flex flex-col w-full text-lg font-bold gap-2 items-center p-4"
+      >
+        <h1 className="text-xl md:text-2xl">{item.position}</h1>
+        {/* <div className="blink"></div> */}
+        <p className="text-fourth">{item.duration}</p>
+        <p className="">{item.company}</p>
+      </div>
     </>
   );
 };
 
-const TiltCard = ({ item }) => {
-  const ref = useRef(null);
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const xSpring = useSpring(x);
-  const ySpring = useSpring(y);
-
-  const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
-
-  const handleMouseMove = (e) => {
-    if (!ref.current) return [0, 0];
-
-    const rect = ref.current.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = (e.clientX - rect.left) * 32.5;
-    const mouseY = (e.clientY - rect.top) * 32.5;
-
-    const rX = (mouseY / height - 32.5 / 2) * -1;
-    const rY = mouseX / width - 32.5 / 2;
-
-    x.set(rX);
-    y.set(rY);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
+const AceternityEducation = ({ item }) => {
   return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transformStyle: "preserve-3d",
-        transform,
-      }}
-      className="relative h-48 md:h-60 rounded-xl bg-gradient-to-br from-third to-fourth"
-    >
+    <>
       <div
-        style={{
-          transform: "translateZ(75px)",
-          transformStyle: "preserve-3d",
-        }}
-        className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg p-4 md:p-2"
+        className="flex flex-col text-lg font-bold gap-2 items-center p-4"
       >
-        {/* content */}
-        <div
-          style={{
-            transform: "translateZ(50px)",
-          }}
-          className="flex flex-col text-lg font-bold text-black gap-2 items-center"
-        >
-          <h1 className="text-xl md:text-2xl">{item.position}</h1>
-          <div className="flex gap-3 items-center">
-
-            <div className="blink"></div>
-            <p className="text-fourth">{item.duration}</p>
-          </div>
-          <p className="">{item.company}</p>
-
-          <LuMousePointerClick
-            style={{
-              transform: "translateZ(75px)",
-            }}
-            className="absolute -bottom-7 -right-8  md:-bottom-10 md:-right-16 mx-auto text-3xl lg:text-4xl text-fourth"
-          />
-          {/* <GiClick
-          style={{
-            transform: "translateZ(75px)",
-          }}
-          className="absolute lg:hidden not-hidden bottom-2  -rotate-6 lg:-rotate-30  right-2 mx-auto text-3xl lg:text-4xl text-fourth"
-          /> */}
+        <h1 className="text-xl md:text-2xl">{item.degree}</h1>
+        <div className="flex gap-3 items-center">
+          {/* <div className="blink"></div> */}
+          <p className="text-fourth">{item.duration}</p>
         </div>
+        <p className="">{item.institution}</p>
       </div>
-    </motion.div>
+    </>
   );
 };
 
-
-const TiltCardEdu = ({ item }) => {
-  const ref = useRef(null);
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const xSpring = useSpring(x);
-  const ySpring = useSpring(y);
-
-  const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
-
-  const handleMouseMove = (e) => {
-    if (!ref.current) return [0, 0];
-
-    const rect = ref.current.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = (e.clientX - rect.left) * 32.5;
-    const mouseY = (e.clientY - rect.top) * 32.5;
-
-    const rX = (mouseY / height - 32.5 / 2) * -1;
-    const rY = mouseX / width - 32.5 / 2;
-
-    x.set(rX);
-    y.set(rY);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
+const AceternitySkills = ({ item }) => {
+  const IconComponent = getIconComponent(item.library, item.title);
   return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transformStyle: "preserve-3d",
-        transform,
-      }}
-      className="relative h-48 md:h-60 rounded-xl bg-gradient-to-br from-third to-fourth"
-    >
-      <div
-        style={{
-          transform: "translateZ(75px)",
-          transformStyle: "preserve-3d",
-        }}
-        className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg p-4 md:p-2"
-      >
-        {/* content */}
-        <div
-          style={{
-            transform: "translateZ(50px)",
-          }}
-          className=" relative flex flex-col text-lg font-bold text-black gap-2 items-center justify-center text-center"
-        >
-          <h1 className="text-xl md:text-2xl">{item.degree}</h1>
-          <div className="flex gap-3 items-center">
-
-            <div className="blink"></div>
-            <p className="text-fourth">{item.duration}</p>
-          </div>
-          <p className="">{item.institution}</p>
-
-          <LuMousePointerClick
-            style={{
-              transform: "translateZ(75px)",
-            }}
-            className="absolute -bottom-3 -right-2  md:-bottom-6 md:-right-0 mx-auto text-3xl lg:text-4xl text-fourth"
-          />
-          {/* <GiClick
-          style={{
-            transform: "translateZ(75px)",
-          }}
-          className="absolute lg:hidden not-hidden bottom-2  -rotate-6 lg:-rotate-30  right-2 mx-auto text-3xl lg:text-4xl text-fourth"
-          /> */}
+    <>
+      <div className="">
+        <div className="text-5xl p-8">
+          {IconComponent ? <IconComponent /> : null}
         </div>
       </div>
-    </motion.div>
+    </>
   );
 };
-

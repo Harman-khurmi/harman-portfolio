@@ -3,26 +3,42 @@ import React from "react";
 import { useAnimate } from "framer-motion";
 import { FaReact } from "react-icons/fa";
 
-export default function ClipPathLinks({item}){
+
+const skills = [
+  {
+    skill: FaReact
+  },
+  {
+    skill: FaReact
+  },
+  {
+    skill: FaReact
+  },
+  {
+    skill: FaReact
+  },
+  {
+    skill: FaReact
+  },
+  {
+    skill: FaReact
+  },
+];
+
+
+export default function ClipPathLinks(){
     return (
-      <div className="divide-y divide-neutral-900 border border-neutral-900">
-        <div className="grid grid-cols-2 divide-x divide-neutral-900">
-          <LinkBox Icon={FaReact} href="#" />
-          <LinkBox Icon={item.skill} href="#" />
+      <>
+      {skills.map((item, index) => (
+      <div className="divide-y divide-neutral-900 border border-neutral-900" key={index}>
+        <div className=" divide-x divide-neutral-900">
+          {/* <LinkBox Icon={FaReact} href="#" /> */}
+          <LinkBox Icon={item.skill} className={`w-full`} />
           {console.log(item.skill)}
         </div>
-        <div className="grid grid-cols-4 divide-x divide-neutral-900">
-          <LinkBox Icon={item.skill} href="#" />
-          <LinkBox Icon={item.skill} href="#" />
-          <LinkBox Icon={item.skill} href="#" />
-          <LinkBox Icon={item.skill} href="#" />
-        </div>
-        <div className="grid grid-cols-3 divide-x divide-neutral-900">
-          <LinkBox Icon={item.skill} href="#" />
-          <LinkBox Icon={item.skill} href="#" />
-          <LinkBox Icon={item.skill} href="#" />
-        </div>
       </div>
+      ))}
+      </>
     );
   };
   
