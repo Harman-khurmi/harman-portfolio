@@ -10,25 +10,9 @@ import {
 import { FiMousePointer } from "react-icons/fi";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { FaRegHandPointer } from "react-icons/fa";
-import { LuMousePointerClick } from "react-icons/lu";
-import { GiClick } from "react-icons/gi";
-import ClipPathLinks from "@/components/ClipPathLinks";
-import { FaReact } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
-import { FaHtml5 } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { FaBootstrap } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiExpress } from "react-icons/si";
-import { IoLogoNodejs } from "react-icons/io";
-import { FaPython } from "react-icons/fa";
-import { FaVuejs } from "react-icons/fa";
-import { RiNextjsFill } from "react-icons/ri";
-import { TbBrandCpp } from "react-icons/tb";
-
-
 import { HoverBorderGradient } from "../../components/ui/hover-border-gradient";
+// import { Tooltip, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../components/ui/tooltip";
 
 // Mapping of icon libraries
 const iconLibraries = {
@@ -38,6 +22,9 @@ const iconLibraries = {
   ri: require("react-icons/ri"),
   io: require("react-icons/io"),
   tb: require("react-icons/tb"),
+  bi: require("react-icons/bi"),
+  gr: require("react-icons/gr"),
+  fi: require("react-icons/fi"),
   // Add other libraries as needed
 };
 
@@ -130,23 +117,69 @@ const resume = () => {
                   className='flex w-full items-center justify-center content-center py-10'
                 >
                   <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
-                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center content-center place-content-center mx-auto gap-4'>
-                      {skills.skill.map((item, index) => (
-                        <HoverBorderGradient
-                          containerClassName="rounded-md"
-                          key={index}
-                          as="button"
-                          className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full "
-                        >
-                          <AceternitySkills key={index} item={item} className="" />
-                        </HoverBorderGradient>
+                    <div className='flex flex-col gap-4'>
+                      {skills.skill.map((category, categoryIndex) => (
+                        <div key={categoryIndex} className="w-full flex flex-col">
+                          <h2 className="text-xl font-bold mb-6">{category.category}</h2>
+                          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 ">
+                            {category.tech.map((item, index) => (
+                              <TooltipProvider key={index}>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <div className="w-full">
+                                      <HoverBorderGradient
+                                        containerClassName="rounded-md"
+                                        as="div"
+                                        className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-4"
+                                      >
+                                        <AceternitySkills item={item} />
+                                      </HoverBorderGradient>
+                                    </div>
+                                  </TooltipTrigger>
+                                  <TooltipContent>
+                                    <p>{item.name}</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            ))}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </ScrollArea>
                 </motion.div>
               </TabsContent>
 
-              <TabsContent value="About me">Change your password here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus assumenda asperiores natus, repudiandae illo sunt alias vero quis obcaecati, blanditiis, saepe totam magnam! Tempora provident ad aliquam magni adipisci eos!</TabsContent>
+              <TabsContent value="About me">
+                <div className='flex flex-col gap-4 items-center md:items-start'>
+                  <h1 className='text-3xl'>{aboutMe.title}</h1>
+                  <p className='text-md text-justify'>{aboutMe.description}</p>
+                </div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
+                  className='flex w-full items-center justify-center content-center py-10'
+                >
+                  <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
+                    <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
+                      {aboutMe.exp.map((item, index) => (
+                        // <HoverBorderGradient
+                        //   containerClassName="rounded-md"
+                        //   key={index}
+                        //   as="button"
+                        //   className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-6 px-12"
+                        // >
+                        //   <AceternityEducation key={index} item={item} className="" />
+                        // </HoverBorderGradient>
+                        <div className="flex gap-6 items-center" key={index}>
+                          <h2 className="text-second/60">{item.title}:</h2>
+                          <h1 className="text-xl font-medium">{item.value}</h1>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </motion.div>
+              </TabsContent>
             </div>
           </div>
         </Tabs>
@@ -211,48 +244,101 @@ const education = {
 const skills = {
   title: 'My Skills',
   description: "I have a diverse set of skills in web development, mobile development, UI/UX design, and graphic design. I am proficient in various programming languages and design tools.",
-  skill : [
-    {library: "fa", title : "FaHtml5"},
-    {library: "fa", title : "FaCss3Alt"},
-    {library: "io5", title : "IoLogoJavascript"},
-    {library: "fa", title : "FaReact"},
-    {library: "ri", title : "RiNextjsFill"},
-    {library: "fa", title : "FaVuejs"},
-    {library: "tb", title : "TbBrandCpp"},
-    {library: "fa", title : "FaPython"},
-    {library: "io", title : "IoLogoNodejs"},
-    {library: "si", title : "SiExpress"},
-    {library: "ri", title : "RiTailwindCssFill"},
-    {library: "fa", title : "FaBootstrap"},
-
+  skill: [
+    {
+      category: "Frontend Development",
+      tech: [
+        { library: "fa", title: "FaHtml5", name: "HTML5" },
+        { library: "fa", title: "FaCss3Alt", name: "CSS3" },
+        { library: "io5", title: "IoLogoJavascript", name: "JavaScript" },
+        { library: "fa", title: "FaReact", name: "React" },
+        { library: "ri", title: "RiNextjsFill", name: "Next.js" },
+        { library: "fa", title: "FaVuejs", name: "Vue.js" },
+        { library: "ri", title: "RiTailwindCssFill", name: "Tailwind CSS" },
+        { library: "fa", title: "FaBootstrap", name: "Bootstrap" },
+        { library: "si", title: "SiGreensock", name: "GreenSock (GSAP)" },
+        { library: "tb", title: "TbBrandFramerMotion", name: "Framer Motion" }
+      ]
+    },
+    {
+      category: "Backend & Databases",
+      tech: [
+        { library: "io", title: "IoLogoNodejs", name: "Node.js" },
+        { library: "si", title: "SiExpress", name: "Express" },
+        { library: "bi", title: "BiLogoMongodb", name: "MongoDB" },
+        { library: "gr", title: "GrMysql", name: "MySQL" }
+      ]
+    },
+    {
+      category: "Programming Languages",
+      tech: [
+        { library: "tb", title: "TbBrandCpp", name: "C++" },
+        { library: "fa", title: "FaPython", name: "Python" }
+      ]
+    },
+    {
+      category: "Tools & Others",
+      tech: [
+        { library: "fi", title: "FiFigma", name: "Figma" },
+        { library: "si", title: "SiAdobecreativecloud", name: "Adobe Creative Cloud" },
+        { library: "si", title: "SiSelenium", name: "Selenium" },
+        { library: "fa", title: "FaGithub", name: "GitHub" },
+        { library: "fa", title: "FaGitAlt", name: "Git" },
+        { library: "fa", title: "FaAws", name: "AWS" }
+      ]
+    }
   ]
 }
 
 const aboutMe = {
-  icon: "",
   title: 'About Me',
   description: "I am a passionate developer and designer with a keen eye for detail. I enjoy creating user-friendly applications and exploring new technologies. I am always eager to learn and grow in my field.",
   exp: [
     {
-      hobby: 'Coding',
-      description: 'I love coding and building new projects. It allows me to solve problems and create innovative solutions.',
+      title: 'Name',
+      value: "Harmanpreet Singh"
     },
     {
-      hobby: 'Designing',
-      description: 'Designing is my passion. I enjoy creating visually appealing and user-friendly designs.',
+      title: 'Phone',
+      value: "+91 8264627072"
     },
     {
-      hobby: 'Reading',
-      description: 'I like to read books and articles about technology, design, and personal development.',
+      title: 'Email',
+      value: "harmankhurmi365@gmail.com"
     },
     {
-      hobby: 'Traveling',
-      description: 'Traveling helps me to explore new cultures and gain new perspectives. It also inspires my creativity.',
+      title: 'Experience',
+      value: "3+ Years"
+    },
+    {
+      title: 'Freelance',
+      value: "Available"
+    },
+    {
+      title: 'Nationality',
+      value: "Indian"
+    },
+    {
+      title: 'GitHub',
+      value: "Harman-khurmi"
+    },
+    {
+      title: 'Figma Community',
+      value: "@harmankhurmi"
+    },
+    {
+      title: 'Behance',
+      value: "harmankhurmi"
+    },
+    {
+      title: 'Languages',
+      value: "English, Hindi, Punjabi"
     },
   ],
 }
 
 const AceternityExperience = ({ item }) => {
+
   return (
     <>
       <div

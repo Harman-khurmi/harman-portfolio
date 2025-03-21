@@ -118,10 +118,13 @@
 
 @theme {
   --font-family: "Raleway", sans-serif;
-  --color-first: #faadf0;
+  /* --color-first: #faadf0; */
+  --color-first: #8c84fe;
   --color-second: #8c84fe;
-  --color-third: #13b0fe;
-  --color-fourth: #1e6ffe;
+  --color-third: #8c84fe;
+  --color-fourth: #8c84fe;
+  /* --color-third: #13b0fe;
+  --color-fourth: #1e6ffe; */
   --color-light: #ffffff;
   --color-dark: #282828;
   --color-gray: #e5e5e5;
@@ -146,7 +149,9 @@
 
 /* styles/globals.css */
 .stroke-text {
-  -webkit-text-stroke: 1px #13b0fe; /* Adjust thickness and color as needed */
+  /* -webkit-text-stroke: 1px #13b0fe; */
+  -webkit-text-stroke: 1px #8c84fe;
+   /* Adjust thickness and color as needed */
   color: transparent; /* This ensures only the stroke is visible */
 }
 
