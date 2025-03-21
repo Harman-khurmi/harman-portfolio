@@ -23,10 +23,10 @@ const Header = () => {
             <div className='flex mx-auto w-full gap-46 justify-between  '>
                 <div>
                     <Link href={'/'} passHref>
-                        <Image src={logo} className='w-12 md:w-14 shrink-0' alt='logo'></Image>
+                        <Image src={logo} className='w-10 md:w-12 shrink-0' alt='logo'></Image>
                     </Link>
                 </div>
-                <div className='lg:hidden flex relative mt-3 md:mt-7 mr-6 md:mr-10 cursor-pointer  '>
+                <div className='lg:hidden flex relative mt-2 md:mt-4 mr-6 md:mr-10 cursor-pointer  '>
                     {/* <FiMenu /> */}
                     <Mobilebar/>
 

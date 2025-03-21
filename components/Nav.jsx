@@ -14,7 +14,6 @@ const routes = [
 
 const Nav = () => {
     const pathname = usePathname()
-    console.log(pathname);
 
     return (
         <div className=''>
