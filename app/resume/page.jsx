@@ -163,15 +163,7 @@ const resume = () => {
                   <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
                     <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
                       {aboutMe.exp.map((item, index) => (
-                        // <HoverBorderGradient
-                        //   containerClassName="rounded-md"
-                        //   key={index}
-                        //   as="button"
-                        //   className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-6 px-12"
-                        // >
-                        //   <AceternityEducation key={index} item={item} className="" />
-                        // </HoverBorderGradient>
-                        <div className="flex gap-6 items-center" key={index}>
+                        <div className="flex gap-4 lg:gap-6 items-center" key={index}>
                           <h2 className="text-second/60">{item.title}:</h2>
                           <h1 className="text-xl font-medium">{item.value}</h1>
                         </div>
