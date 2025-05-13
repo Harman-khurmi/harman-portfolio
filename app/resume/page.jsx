@@ -13,6 +13,9 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { HoverBorderGradient } from "../../components/ui/hover-border-gradient";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../components/ui/tooltip";
 import { GrAchievement } from "react-icons/gr";
+import { MdArrowOutward } from "react-icons/md";
+import Image from "next/image";
+
 
 // Mapping of icon libraries
 const iconLibraries = {
@@ -167,7 +170,7 @@ const resume = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1, transition: { duration: 0.4, delay: 0.4, ease: easeInOut } }}>
-                  <div className='flex flex-col gap-4 items-center md:items-start'>
+                  <div className='flex flex-col gap-4 items-center text-center md:text-start md:items-start'>
                     <h1 className='text-3xl'>{projects.title}</h1>
                     <p className='text-md text-justify'>{projects.description}</p>
                   </div>
@@ -177,12 +180,12 @@ const resume = () => {
                   animate={{ opacity: 1, transition: { duration: 0.4, delay: 0.4, ease: easeInOut } }}
                   className='flex w-full items-center justify-center content-center py-10'
                 >
-                  <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
-                    <div className='flex flex-col gap-4'>
+                  <ScrollArea className="h-[18rem] w-full flex justify-center content-center pr-4">
+                    <div className='flex flex-col lg:gap-24 md:gap-16 gap-8'>
                       {projects.content.map((section, sectionIdx) => (
                         <div key={sectionIdx} className="w-full flex flex-col">
                           <h2 className="text-xl font-bold mb-6">{section.subHead}</h2>
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          <div className="grid grid-cols-1 gap-4">
                             {section.list.map((item, idx) => (
                               <HoverBorderGradient
                                 containerClassName="rounded-md"
@@ -346,12 +349,14 @@ const projects = {
       list: [
         {
           title: 'Project Name',
+          date: '2023-2024',
           toolsUsed: 'HTML, CSS, JavaScript, React',
-          description: 'A brief description of the project and its features.',
+          description: 'A brief description of the project and its features.A brief description of the project and its features.A brief description of the project and its features.',
           link: 'https://example.com'
         },
         {
           title: 'Project Name2',
+          date: '2024-2025',
           toolsUsed: 'HTML, CSS, JavaScript, React',
           description: 'A brief description of the project and its features.',
           link: 'https://example2.com'
@@ -363,13 +368,15 @@ const projects = {
       list: [
         {
           title: 'Achievement Name',
-          description: 'A brief description of the achievement and its significance.',
-          link: 'https://example.com'
+          description: 'Completed a fintech internship at Bluestock Fintech, contributing to key development projects and gaining hands-on industry experience',
+          link: 'https://example.com',
+          img: '/sample.jpeg'
         },
         {
           title: 'Achievement Name2',
           description: 'A brief description of the achievement and its significance.',
-          link: 'https://example2.com'
+          link: 'https://example2.com',
+          img: '/sample.jpeg'
         },
 
       ]
@@ -471,31 +478,56 @@ const AceternitySkills = ({ item }) => {
 };
 const AceternityProject = ({ item, type }) => {
   return (
-    <div className="flex flex-col text-lg font-bold gap-2 items-start p-4">
-      <h1 className="text-xl md:text-2xl">{item.title}</h1>
-      <p className="text-fourth">{item.description}</p>
+    <div className="flex w-full flex-col text-lg font-bold gap-2 items-start p-4">
+
       {type === "Projects" && (
         <>
-          <p className="text-sm text-neutral-500">Tools: {item.toolsUsed}</p>
-          <a
+          <div className="flex items-center justify-between w-full">
+            <h1 className="text-xl md:text-2xl">{item.title}</h1>
+            <p className="text-sm italic">[{item.date}]</p>
+          </div>
+          <p className="text-sm text-fourth">{item.toolsUsed}</p>
+          <p className="text-neutral-500">{item.description}</p>
+          <button
+            onClick={() => window.open(item.link, "_blank")}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="outline"
+            className=" flex lg:text-xl border-2 border-dashed border-second bg-white font-semibold text-dark  duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-sm mt-2  items-center gap-2 group hover:cursor-pointer hover:dark:bg-black hover:dark:text-white hover:bg-neutral-50   transition-all p-2 px-3 rounded-xl">
+            <p className="text-sm  transition-all delay-75">View Project</p>
+            <MdArrowOutward className="inline-block group-hover:rotate-45 transition-all delay-75 group-hover:animate-bounce" />
+          </button>
+        </>
+
+      )}
+      {type === "Achievements" && item.link && (
+        <>
+          <div className="flex items-center justify-between w-full gap-12">
+            <div className="flex flex-col w-full">
+              <h1 className="text-xl md:text-2xl">{item.title}</h1>
+              <p className="text-neutral-500">{item.description}</p>
+            </div>
+            <a href={item.link} target="_blank" rel="noopener noreferrer" className="block mb-2">
+              {item.img && (
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  width={260}
+                  height={260}
+                  className="rounded-lg object-cover hover:scale-110 transition-transform duration-300 ease-in-out"
+                />
+              )}
+            </a>
+          </div>
+          {/* <a
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 underline text-sm mt-2"
           >
-            View Project
-          </a>
+            More Info
+          </a> */}
         </>
-      )}
-      {type === "Achievements" && item.link && (
-        <a
-          href={item.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 underline text-sm mt-2"
-        >
-          More Info
-        </a>
       )}
     </div>
   );
