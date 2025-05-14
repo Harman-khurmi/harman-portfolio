@@ -14,7 +14,6 @@ import { HoverBorderGradient } from "../../components/ui/hover-border-gradient";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../components/ui/tooltip";
 import { GrAchievement } from "react-icons/gr";
 import { MdArrowOutward } from "react-icons/md";
-import Image from "next/image";
 
 
 // Mapping of icon libraries
@@ -71,15 +70,15 @@ const resume = () => {
                   className='flex w-full items-center justify-center content-center py-10'
                 >
                   <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
-                    <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 justify-center w-full  content-center place-content-center mx-auto gap-4'>
                       {experience.exp.map((item, index) => (
                         <HoverBorderGradient
                           containerClassName="rounded-md"
                           key={index}
-                          as="button"
-                          className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-6 px-12"
+                          as="div"
+                          className="dark:bg-black bg-white text-black dark:text-white flex items-center text-center justify-center w-full h-full p-6 md:p-8 lg:px-12"
                         >
-                          <AceternityExperience key={index} item={item} className="" />
+                          <AceternityExperience key={index} item={item} className="w-full h-full" />
                         </HoverBorderGradient>
                       ))}
                     </div>
@@ -108,7 +107,7 @@ const resume = () => {
                           containerClassName="rounded-md"
                           key={index}
                           as="button"
-                          className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-6 px-12"
+                          className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-4 lg:px-6"
                         >
                           <AceternityEducation key={index} item={item} className="" />
                         </HoverBorderGradient>
@@ -137,7 +136,7 @@ const resume = () => {
                       {skills.skill.map((category, categoryIndex) => (
                         <div key={categoryIndex} className="w-full flex flex-col">
                           <h2 className="text-xl font-bold mb-6">{category.category}</h2>
-                          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 ">
+                          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-4 gap-2 ">
                             {category.tech.map((item, index) => (
                               <TooltipProvider key={index}>
                                 <Tooltip>
@@ -180,7 +179,7 @@ const resume = () => {
                   animate={{ opacity: 1, transition: { duration: 0.4, delay: 0.4, ease: easeInOut } }}
                   className='flex w-full items-center justify-center content-center py-10'
                 >
-                  <ScrollArea className="h-[18rem] w-full flex justify-center content-center pr-4">
+                  <ScrollArea className="h-[18rem] w-full flex justify-center content-center lg:pr-4 pr-2">
                     <div className='flex flex-col lg:gap-24 md:gap-16 gap-8'>
                       {projects.content.map((section, sectionIdx) => (
                         <div key={sectionIdx} className="w-full flex flex-col">
@@ -191,7 +190,7 @@ const resume = () => {
                                 containerClassName="rounded-md"
                                 as="div"
                                 key={idx}
-                                className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-4"
+                                className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full p-4 lg:px-6"
                               >
                                 <AceternityProject item={item} type={section.subHead} />
                               </HoverBorderGradient>
@@ -221,9 +220,13 @@ const resume = () => {
                   <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
                     <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
                       {aboutMe.exp.map((item, index) => (
-                        <div className="flex gap-4 lg:gap-6 items-center" key={index}>
+                        <div className="flex gap-4 items-center" key={index}>
                           <h2 className="text-second/60">{item.title}:</h2>
-                          <h1 className="text-xl font-medium">{item.value}</h1>
+                          {item.link ? (
+                          <a href={item.link} className="text-xl font-medium underline">{item.value}</a>
+                          ) : (
+                            <h1 className="text-xl font-medium">{item.value}</h1>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -247,27 +250,21 @@ const experience = {
   exp: [
     {
       company: 'Digital Alpha Technologies',
-      position: 'Web Developer',
-      duration: '2020 - Present',
+      position: 'Frontend Developer',
+      duration: "Feb'2025 - Present",
       description: 'I create responsive websites that allow the user to experience your website in the best and most appropriate way.',
     },
     {
-      company: 'Company Name',
-      position: 'Mobile Developer',
-      duration: '2018 - 2020',
+      company: 'Dawdle',
+      position: 'Full Stack Developer',
+      duration: "Oct'24 - Dec'2024",
       description: 'I create mobile applications that are user-friendly and fully functional. I use Dart and Flutter to build mobile applications.',
     },
     {
-      company: 'Company Name',
-      position: 'UI/UX Designer',
-      duration: '2016 - 2018',
+      company: 'Bluestock Fintech',
+      position: 'Software Development Engineer',
+      duration: "Jun'2024 - Aug'2024",
       description: 'I create user interfaces that are intuitive, easy to use, and engaging. I use Figma to design user interfaces.',
-    },
-    {
-      company: 'Company Name',
-      position: 'Graphic Designer',
-      duration: '2014 - 2016',
-      description: 'I create visual concepts that inspire, inform, and transform. I use Adobe Illustrator and Adobe Photoshop to create visual concepts.',
     },
   ],
 }
@@ -277,15 +274,15 @@ const education = {
   description: "I have a strong educational background in computer science and design. I have completed various courses and certifications to enhance my skills and knowledge.",
   edu: [
     {
-      institution: 'University Name',
-      degree: 'Bachelor of Science in Computer Science',
-      duration: '2016 - 2020',
+      institution: 'Thapar Institute of Engineering and Technology',
+      degree: 'Bachelor of Computer Science Engineering',
+      duration: '2021 - 2025',
       description: 'I studied computer science and gained a solid foundation in programming, algorithms, and software development.',
     },
     {
-      institution: 'Design School',
-      degree: 'Diploma in Graphic Design',
-      duration: '2014 - 2016',
+      institution: 'St. Fateh Singh senior Secondary School',
+      degree: 'XII (Non-Medical)',
+      duration: '2019 - 2021',
       description: 'I completed a diploma in graphic design, where I learned about design principles, typography, and visual communication.',
     },
   ],
@@ -348,18 +345,18 @@ const projects = {
       subHead: "Projects",
       list: [
         {
-          title: 'Project Name',
-          date: '2023-2024',
-          toolsUsed: 'HTML, CSS, JavaScript, React',
-          description: 'A brief description of the project and its features.A brief description of the project and its features.A brief description of the project and its features.',
-          link: 'https://example.com'
+          title: 'EnlightAI - Real-time Answer Generation Platform',
+          date: "Feb'2025",
+          toolsUsed: 'ReactJS, Tailwind CSS, Auth0, Google Gemini API, Flowbite',
+          description: 'Developed EnlightAI, a real-time answer generation platform leveraging the Gemini API, featuring seamless Auth0-powered signup, dark theme, chat history, and recent chats functionalities. Engineered a robust ReactJS + Tailwind CSS solution with dedicated contexts for user authentication and prompt handling, state management for recent/previous prompts, custom scrollbar styling, and Flowbite-driven skeleton loading.',
+          link: 'https://enlight-ai.vercel.app/'
         },
         {
-          title: 'Project Name2',
-          date: '2024-2025',
-          toolsUsed: 'HTML, CSS, JavaScript, React',
-          description: 'A brief description of the project and its features.',
-          link: 'https://example2.com'
+          title: 'Plateform - A Digital Mess',
+          date: '2024-2024',
+          toolsUsed: 'HTML, CSS, JavaScript, ReactJS, MongoDB',
+          description: 'Built and tested a digital platform that enhanced the conventional mess system and greatly decreased daily food waste by using a productive meal attendance tracking system across more than 10+ hostels. Optimized a strong solution that uses MongoDB for the backend and ReactJS for the frontend, improving the efficiency of the mess management system and expediting the 3-time meal attendance process',
+          link: 'https://digital-mess-client.vercel.app/'
         },
       ]
     },
@@ -367,10 +364,10 @@ const projects = {
       subHead: "Achievements",
       list: [
         {
-          title: 'Achievement Name',
-          description: 'Completed a fintech internship at Bluestock Fintech, contributing to key development projects and gaining hands-on industry experience',
-          link: 'https://example.com',
-          img: '/sample.jpeg'
+          title: 'AWS Academy Cloud Foundations Certificate',
+          description: 'Earned AWS Academy Cloud Foundations Certificate and Digital Badge for completing a 20-hour course, showcasing foundational cloud computing skills',
+          link: 'https://drive.google.com/file/d/1Tn8qlDCyJ9-zZpcUvFnkLQk7Xu9SzuBU/view',
+          img: '/awsbadge.png'
         },
         {
           title: 'Achievement Name2',
@@ -414,15 +411,18 @@ const aboutMe = {
     },
     {
       title: 'GitHub',
-      value: "Harman-khurmi"
+      value: "Harman-khurmi",
+      link: "https://www.github.com/Harman-khurmi"
     },
     {
       title: 'Figma Community',
-      value: "@harmankhurmi"
+      value: "@harmankhurmi",
+      link: "https://www.figma.com/@harmankhurmi"
     },
     {
       title: 'Behance',
-      value: "harmankhurmi"
+      value: "harmankhurmi",
+      link: "https://www.behance.net/harmankhurmi"
     },
     {
       title: 'Languages',
@@ -436,7 +436,7 @@ const AceternityExperience = ({ item }) => {
   return (
     <>
       <div
-        className="flex flex-col w-full text-lg font-bold gap-2 items-center p-4"
+        className="flex flex-col text-lg font-bold gap-2 w-full h-full items-center p-4 md:p-6"
       >
         <h1 className="text-xl md:text-2xl">{item.position}</h1>
         {/* <div className="blink"></div> */}
@@ -451,7 +451,7 @@ const AceternityEducation = ({ item }) => {
   return (
     <>
       <div
-        className="flex flex-col text-lg font-bold gap-2 items-center p-4"
+        className="flex flex-col text-lg font-bold gap-2 items-center p-4 md:p-2"
       >
         <h1 className="text-xl md:text-2xl">{item.degree}</h1>
         <div className="flex gap-3 items-center">
@@ -469,7 +469,7 @@ const AceternitySkills = ({ item }) => {
   return (
     <>
       <div className="">
-        <div className="text-5xl p-8">
+        <div className="text-5xl p-6">
           {IconComponent ? <IconComponent /> : null}
         </div>
       </div>
@@ -478,16 +478,16 @@ const AceternitySkills = ({ item }) => {
 };
 const AceternityProject = ({ item, type }) => {
   return (
-    <div className="flex w-full flex-col text-lg font-bold gap-2 items-start p-4">
+    <div className="flex w-full flex-col text-lg font-bold gap-2 items-start lg:p-4 p-2">
 
       {type === "Projects" && (
         <>
           <div className="flex items-center justify-between w-full">
             <h1 className="text-xl md:text-2xl">{item.title}</h1>
-            <p className="text-sm italic">[{item.date}]</p>
+            <p className="text-sm italic lg:flex hidden">[ {item.date} ]</p>
           </div>
           <p className="text-sm text-fourth">{item.toolsUsed}</p>
-          <p className="text-neutral-500">{item.description}</p>
+          <p className="text-neutral-500 text-sm md:text-md lg:text-lg">{item.description}</p>
           <button
             onClick={() => window.open(item.link, "_blank")}
             target="_blank"
@@ -502,22 +502,25 @@ const AceternityProject = ({ item, type }) => {
       )}
       {type === "Achievements" && item.link && (
         <>
-          <div className="flex items-center justify-between w-full gap-12">
+          <div className="lg:flex lg:flex-row items-center lg:items-start lg:text-start justify-between w-full lg:gap-8 ">
             <div className="flex flex-col w-full">
-              <h1 className="text-xl md:text-2xl">{item.title}</h1>
-              <p className="text-neutral-500">{item.description}</p>
+              <h1 className="text-xl md:text-2xl mb-2">{item.title}</h1>
+              <p className="text-neutral-500 text-justify lg:text-left mb-2">{item.description}</p>
             </div>
-            <a href={item.link} target="_blank" rel="noopener noreferrer" className="block mb-2">
-              {item.img && (
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  width={260}
-                  height={260}
-                  className="rounded-lg object-cover hover:scale-110 transition-transform duration-300 ease-in-out"
-                />
-              )}
-            </a>
+
+            <div className="w-full items-center justify-center">
+              <a href={item.link} target="_blank" rel="noopener noreferrer" className="block">
+                {item.img && (
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    // width={260}
+                    // height={260}
+                    className="rounded-lg object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
+                  />
+                )}
+              </a>
+            </div>
           </div>
           {/* <a
             href={item.link}
