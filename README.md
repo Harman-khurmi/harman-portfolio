@@ -7,3 +7,5 @@ Technologies Used :
 4. SHADCN UI
 5. REACT-TYPE-ANIMATION
 6. hover.dev - Links, Cards, others>logo-origami
+7. Contact form - web3forms.com
+8. Alert for form fill - https://sweetalert2.github.io/

@@ -220,7 +220,7 @@ const resume = () => {
                   <ScrollArea className="h-[18rem] w-full flex justify-center content-center">
                     <div className='grid grid-cols-1 lg:grid-cols-2 justify-center content-center place-content-center mx-auto gap-8'>
                       {aboutMe.exp.map((item, index) => (
-                        <div className="flex gap-4 items-center" key={index}>
+                        <div className="flex gap-2 items-center" key={index}>
                           <h2 className="text-second/60">{item.title}:</h2>
                           {item.link ? (
                           <a href={item.link} className="text-xl font-medium underline">{item.value}</a>
