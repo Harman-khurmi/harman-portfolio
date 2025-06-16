@@ -47,7 +47,7 @@ const ProjectCarousel = () => {
         <div className='flex flex-col gap-6 lg:flex-row lg:gap-10  w-full h-full lg:px-10'>
             <div className='flex flex-col order-2 lg:order-none lg:w-[50%] px-5 lg:px-0 gap-5 group'>
                 {/* project count */}
-                <div className='text-8xl font-bold text-first stroke-text group-hover:stroke-3xl'>
+                <div className='text-8xl font-bold text-first stroke-text group-hover:!text-third group-focus:!text-third duration-300 delay-150 transition-all ease-in-out'>
                     {project.num}
                 </div>
                 {/* category */}

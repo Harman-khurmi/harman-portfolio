@@ -63,7 +63,9 @@ export default function MobileNavbar() {
         </div>
         {/*  */}
         <div>
+          <Link href="/services" passHref>
           <Button variant="outline" className={`rounded-3xl border-2 border-dashed border-second bg-white px-8 py-7 font-bold uppercase text-dark text-xl transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-lg hover:shadow-light hover:shadow-[4px_4px_0px] active:shadow-[6px_6px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl `}>Hire me</Button>
+          </Link>
         </div>
 
         {/* dark toggler */}

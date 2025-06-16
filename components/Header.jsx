@@ -38,7 +38,9 @@ const Header = () => {
                     <Nav className="hidden md:flex" />
                 </div>
                 <div>
+                  <Link href="/services" passHref>
                     <Button variant="outline" className={`rounded-3xl border-2 border-dashed border-second bg-white px-6 py-5 font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-lg hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none`}>Hire me</Button>
+                  </Link>
                 </div>
                 <div>
               <DropdownMenu>

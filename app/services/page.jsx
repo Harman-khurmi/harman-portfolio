@@ -2,6 +2,7 @@
 import React from 'react'
 import { easeInOut, motion } from 'framer-motion'
 import { HiArrowLongRight } from "react-icons/hi2";
+import Link from 'next/link';
 
 const service = [
   {
@@ -51,7 +52,9 @@ const services = () => {
 
               <div className='flex gap-2 items-center text-center content-center align-middle place-content-center justify-between '>
                 <div className='text-6xl font-semibold  stroke-text group-hover:!text-third group-focus:!text-third duration-300 delay-150 transition-all ease-in-out'>{item.num}</div>
-                <div className='flex gap-2 items-center justify-center text-3xl dark:bg-light size-16 rounded-full text-dark group-hover:!bg-third group-focus:!bg-third hover:cursor-pointer group-hover:!text-light hover:-rotate-45 duration-300 delay-150 transition-all ease-in-out'>{item.icon}</div>
+                <Link href="/contact" passHref>
+                <button className='flex gap-2 items-center justify-center text-3xl dark:bg-light size-16 rounded-full text-dark group-hover:!bg-third group-focus:!bg-third hover:cursor-pointer group-hover:!text-light hover:-rotate-45 duration-300 delay-150 transition-all ease-in-out'>{item.icon}</button>
+                </Link>
               </div>
 
               <div className='text-4xl font-semibold  group-hover:!text-third group-focus:!text-third duration-300 delay-150 transition-all ease-in-out'>{item.title}</div>
