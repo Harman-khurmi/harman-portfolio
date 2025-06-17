@@ -10,3 +10,4 @@ Technologies Used :
 7. Contact form - web3forms.com
 8. Alert for form fill - https://sweetalert2.github.io/
 9. Swiping effect - npm swiper
+10. Text effects - motion primitives + react bits
