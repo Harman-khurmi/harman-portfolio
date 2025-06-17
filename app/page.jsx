@@ -77,7 +77,7 @@ const Home = () => {
                   />
                   <BlurText
                     text="Singh"
-                    delay={100}
+                    delay={150}
                     animateBy="letters"
                     direction="top"
                     className="text-4xl md:text-5xl"
