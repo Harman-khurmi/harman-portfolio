@@ -246,7 +246,7 @@ export default resume
 const experience = {
   icon: "",
   title: 'My Experience',
-  description: "I have 3+ years of experience in web development, mobile development, UI/UX design, and graphic design. I have worked on various projects and have gained valuable experience in creating user-friendly applications. I am proficient in HTML, CSS, JavaScript, Dart, Flutter, Figma, Adobe Illustrator, and Adobe Photoshop. I am always looking for new challenges and opportunities to grow as a developer.",
+  description: "I’m a multidisciplinary designer and developer with over 2 years of hands‑on experience delivering responsive websites, user‑centered interfaces, cohesive brand identities, and high‑impact graphics. I’ve crafted end‑to‑end web solutions with React, Next.js & Tailwind CSS, designed intuitive Figma prototypes for web and mobile, and built memorable logos, palettes and marketing assets in Adobe Illustrator & Photoshop. I thrive on tackling new challenges and continuously honing my craft to create engaging, on‑brand digital experiences.",
   exp: [
     {
       company: 'Digital Alpha Technologies',
@@ -260,22 +260,22 @@ const experience = {
       duration: "Oct'24 - Dec'2024",
       description: 'I create mobile applications that are user-friendly and fully functional. I use Dart and Flutter to build mobile applications.',
     },
-    {
-      company: 'Bluestock Fintech',
-      position: 'Software Development Engineer',
-      duration: "Jun'2024 - Aug'2024",
-      description: 'I create user interfaces that are intuitive, easy to use, and engaging. I use Figma to design user interfaces.',
-    },
+    // {
+    //   company: 'Bluestock Fintech',
+    //   position: 'Software Development Engineer',
+    //   duration: "Jun'2024 - Aug'2024",
+    //   description: 'I create user interfaces that are intuitive, easy to use, and engaging. I use Figma to design user interfaces.',
+    // },
   ],
 }
 
 const education = {
   title: 'My Education',
-  description: "I have a strong educational background in computer science and design. I have completed various courses and certifications to enhance my skills and knowledge.",
+  description: "I completed my Bachelor of Technology in Computer Science and Technology from the prestigious Thapar Institute of Engineering and Technology. During my studies, I built a solid foundation in algorithms, data structures, and software engineering principles, complemented by hands-on projects and collaborative assignments. This rigorous curriculum honed my problem‑solving skills and prepared me to deliver robust, user-focused digital solutions.",
   edu: [
     {
-      institution: 'Thapar Institute of Engineering and Technology',
-      degree: 'Bachelor of Computer Science Engineering',
+      institution: 'Thapar University',
+      degree: 'Computer Science and Technology (B.E)',
       duration: '2021 - 2025',
       description: 'I studied computer science and gained a solid foundation in programming, algorithms, and software development.',
     },
@@ -290,7 +290,7 @@ const education = {
 
 const skills = {
   title: 'My Skills',
-  description: "I have a diverse set of skills in web development, mobile development, UI/UX design, and graphic design. I am proficient in various programming languages and design tools.",
+  description: "I excel at end‑to‑end web development, transforming concepts into seamless, responsive digital experiences. My UX/UI expertise ensures intuitive, user‑centered interfaces, while my brand‑design and graphic‑design skills deliver cohesive identities and compelling visuals that resonate with audiences.",
   skill: [
     {
       category: "Frontend Development",
@@ -338,7 +338,7 @@ const skills = {
 }
 const projects = {
   title: 'My Projects & Achievements',
-  description: "I have worked on various projects that showcase my skills in web development, mobile development, UI/UX design, and graphic design. I have created responsive websites, user-friendly mobile applications, and engaging user interfaces.",
+  description: "A diverse showcase of my expertise in web development, UI/UX design, brand identity and graphic design—demonstrating my ability to deliver responsive, user-centered, cohesive, and visually compelling solutions that drive engagement and reinforce brand impact.",
   content: [
 
     {
@@ -348,14 +348,21 @@ const projects = {
           title: 'EnlightAI - Real-time Answer Generation Platform',
           date: "Feb'2025",
           toolsUsed: 'ReactJS, Tailwind CSS, Auth0, Google Gemini API, Flowbite',
-          description: 'Developed EnlightAI, a real-time answer generation platform leveraging the Gemini API, featuring seamless Auth0-powered signup, dark theme, chat history, and recent chats functionalities. Engineered a robust ReactJS + Tailwind CSS solution with dedicated contexts for user authentication and prompt handling, state management for recent/previous prompts, custom scrollbar styling, and Flowbite-driven skeleton loading.',
+          description: 'Built EnlightAI—a real‑time AI chat platform with Gemini API integration, Auth0‑powered signup, dark mode, chat history, and a ReactJS + Tailwind CSS front‑end featuring prompt state management and skeleton loading.',
           link: 'https://enlight-ai.vercel.app/'
         },
         {
+          title: 'Dawdle - Business Landing Page',
+          date: "Sept'2024 - Dec'2024",
+          toolsUsed: 'ReactJS, Tailwind CSS, Framer Motion, Figma',
+          description: 'Built a high‑impact landing page designed in Figma and implemented with React.js & Tailwind CSS. The page features smooth animations using Framer Motion, enhancing user engagement and showcasing the business effectively.',
+          link: 'https://dawdle-live-main.vercel.app/'
+        },
+        {
           title: 'Plateform - A Digital Mess',
-          date: '2024-2024',
+          date: "Jan'2024",
           toolsUsed: 'HTML, CSS, JavaScript, ReactJS, MongoDB',
-          description: 'Built and tested a digital platform that enhanced the conventional mess system and greatly decreased daily food waste by using a productive meal attendance tracking system across more than 10+ hostels. Optimized a strong solution that uses MongoDB for the backend and ReactJS for the frontend, improving the efficiency of the mess management system and expediting the 3-time meal attendance process',
+          description: 'Built a ReactJS front‑end and MongoDB‑powered meal‑attendance platform for 10+ hostels, reducing food waste and streamlining thrice‑daily attendance tracking.',
           link: 'https://digital-mess-client.vercel.app/'
         },
       ]
@@ -370,10 +377,10 @@ const projects = {
           img: '/awsbadge.png'
         },
         {
-          title: 'Achievement Name2',
-          description: 'A brief description of the achievement and its significance.',
-          link: 'https://example2.com',
-          img: '/sample.jpeg'
+          title: 'Certificate of Appreciation from Thapar University',
+          description: 'Certificate of appreciation from the President and DEAN for rendering my services to Admission Cell of Thapar University as a CORE member.',
+          link: 'https://drive.google.com/file/d/1lOAA-h4YxE3RQEYyUNlTeFkrbf9kMBlx/view?usp=sharing',
+          img: '/Frosh Core.jpg'
         },
 
       ]

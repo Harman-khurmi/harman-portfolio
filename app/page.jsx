@@ -132,11 +132,10 @@ const Home = () => {
                 </div>
 
               </div>
-              <div className='text-sm md:text-lg lg:text-xl justify-center lg:text-left max-w-[24rem] md:max-w-[32rem] text-center lg:max-w-[40rem]'>
+              <div className='text-sm md:text-lg lg:text-xl justify-center lg:text-left max-w-[24rem] md:max-w-[32rem] text-center lg:max-w-[44rem]'>
                 <TextEffect per='char' preset='fade'>
-                  I specialize in building scalable and user-friendly web applications. Exploring the techscape with a designer's eye and a coder's heart, I create magic in the pixels.
+                  I'm a Full Stack developer and UI/UX designer with 2 years of experience crafting web products and brand identities. I love finding creative, efficient solutions that turn ideas into standout digital experiences.
                 </TextEffect>
-                {/* <p>I specialize in building scalable and user-friendly web applications. Exploring the techscape with a designer's eye and a coder's heart, I create magic in the pixels.</p> */}
               </div>
               <div className='mt-4'>
                 <a

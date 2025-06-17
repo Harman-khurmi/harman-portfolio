@@ -8,25 +8,25 @@ const service = [
   {
     num: "01",
     title: 'Web Development',
-    description: 'I create responsive websites that allow the user to experience your website in the best and most appropriate way ',
+    description: 'Design & build responsive websites with React, Next.js & Tailwind CSS for standout user experiences.',
     icon: <HiArrowLongRight />,
   },
   {
     num: "02",
-    title: 'Mobile Development',
-    description: 'I create mobile applications that are user-friendly and fully functional. I use Dart and Flutter to build mobile applications.',
+    title: 'UI/UX Design',
+    description: 'Craft intuitive Figma wireframes & interactive prototypes for web and mobile to drive engagement.',
     icon: <HiArrowLongRight />,
   },
   {
     num: "03",
-    title: 'UI/UX Design',
-    description: 'I create user interfaces that are intuitive, easy to use, and engaging. I use Figma to design user interfaces.',
+    title: 'Brand Identity Design',
+    description: 'Develop memorable logos, color palettes & brand guidelines in Illustrator & Photoshop for cohesive branding.',
     icon: <HiArrowLongRight />,
   },
   {
     num: "04",
     title: 'Graphic Design',
-    description: 'I create visual concepts that inspire, inform, and transform. I use Adobe Illustrator and Adobe Photoshop to create visual concepts.',
+    description: 'Deliver custom illustrations, vector icons & marketing collateral in Illustrator & Photoshop to elevate your message.',
     icon: <HiArrowLongRight />,
   },
 ]
@@ -69,3 +69,17 @@ const services = () => {
 }
 
 export default services
+
+
+// in detail content
+// Web Development
+// End‑to‑end website creation—from wireframing and visual design to responsive implementation using React, Next.js, and Tailwind CSS for pixel‑perfect performance across all devices.
+
+// UI/UX Design
+// User‑centered interface and experience design in Figma—wireframes and interactive prototypes for both mobile apps and websites—to craft intuitive, engaging digital products.
+
+// Brand Identity Design
+// Comprehensive brand ecosystems—logo creation, typography, color palettes, and digital‑first guidelines—crafted in Adobe Illustrator and Photoshop with deep design expertise to ensure memorable, cohesive identities.
+
+// Graphic Design
+// Custom illustrations, vector icons, and marketing collateral developed in Adobe Illustrator and Photoshop, delivering polished, high‑impact visuals that elevate your brand presence.
