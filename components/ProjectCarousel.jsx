@@ -29,7 +29,7 @@ const projects = [
         title: 'Project One',
         description: 'Built a high‑impact landing page designed and developed to create the online presence featuring smooth animations, enhancing user engagement and showcasing the business effectively.',
         stack: [{ name: 'React.js' }, { name: 'TailwindCSS' }, { name: 'Framer Motion' }, { name: 'Figma' }],
-        image: '/sample.jpeg',
+        image: '/dawdle.png',
         github: 'https://github.com/Harman-khurmi/Dawdle-live-main',
         live: 'https://dawdle-live-main.vercel.app/'
     },
@@ -54,7 +54,7 @@ const ProjectCarousel = () => {
     const swiper = useSwiper();
 
     return (
-        <div className='flex flex-col gap-4 lg:flex-row lg:gap-10  w-full h-full lg:px-10'>
+        <div className='flex flex-col gap-0 lg:flex-row lg:gap-10  w-full h-full lg:px-10'>
             <div className='flex flex-col order-2 lg:order-none lg:w-[50%] px-5 lg:px-0 gap-5 group'>
                 {/* project count */}
                 <div className='text-8xl font-bold text-first stroke-text group-hover:!text-third group-focus:!text-third duration-300 delay-150 transition-all ease-in-out'>
