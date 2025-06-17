@@ -67,9 +67,16 @@ const Home = () => {
 
                 />
 
-                <div className='lg:hidden flex text-center font-extrabold text-second'>
+                <div className='lg:hidden flex flex-col items-center text-center font-extrabold text-second'>
                   <BlurText
-                    text="Harmanpreet Singh"
+                    text="Harmanpreet"
+                    delay={100}
+                    animateBy="letters"
+                    direction="top"
+                    className="text-4xl md:text-5xl"
+                  />
+                  <BlurText
+                    text="Singh"
                     delay={100}
                     animateBy="letters"
                     direction="top"
