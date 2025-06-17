@@ -13,13 +13,20 @@ import { TbBrandFigma } from "react-icons/tb";
 import Photo from '@/components/Photo';
 import Stats from '@/components/Stats';
 import { easeInOut, motion } from 'framer-motion';
+import SplitText from '@/components/SplitText/SplitText';
+import { TextEffect } from '@/components/motion-primitives/text-effect';
+import TextPressure from '@/components/TextPressure/TextPressure';
+import { useRef, useEffect } from 'react';
+import BlurText from "@/components/BlurText/BlurText";
+import VariableProximity from '@/components/VariableProximity/VariableProximity';
 
 const Home = () => {
+  const containerRef = useRef(null);
 
   const resumeUrl = "https://drive.google.com/file/d/1_zZiuKD5VMfSwPiCNLCkNyKO0SwuCzni/view?usp=sharing";
 
   const socialBtnDesktop = "flex gap-2 lg:text-xl font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-xl hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-xl  bg-light border-2 border-second border-dotted p-2 md:p-3 rounded-full md:rounded-3xl dark:hover:bg-dark dark:hover:text-white group hover:bg-gray-100 hover:text-dark";
-  
+
   const socialBtnMobile = "flex gap-2 lg:text-xl font-semibold uppercase text-dark transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-xl hover:shadow-second hover:shadow-[4px_4px_0px] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-xl  bg-light border-2 border-second border-dotted p-2 md:p-3 rounded-full md:rounded-3xl";
   return (
     <>
@@ -46,12 +53,82 @@ const Home = () => {
                 loop={true}
               />
               <div className='flex flex-col items-center lg:items-start text-4xl md:text-5xl lg:text-6xl font-extrabold  '>
-                <span>Hello I'm</span>
-                <span className='lg:hidden flex text-center text-second'>Harmanpreet Singh</span>
-                <div className='w-full hidden lg:grid place-content-center cursor-crosshair'><BubbleText /></div>
+                <SplitText
+                  text="Hello, I'm"
+                  delay={100}
+                  duration={0.7}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  textAlign="center"
+
+                />
+
+                <div className='lg:hidden flex text-center font-extrabold text-second'>
+                  <BlurText
+                    text="Harmanpreet Singh"
+                    delay={100}
+                    animateBy="letters"
+                    direction="top"
+                    className="text-4xl md:text-5xl"
+                  />
+                </div>
+
+                {/* <div className='w-full hidden lg:grid place-content-center cursor-crosshair'><BubbleText /></div> */}
+                <div className='lg:flex gap-4 font-bold hidden'>
+                  <div style={{ position: 'relative', height: '100px', width: '100%' }}>
+                    <TextPressure
+                      text="Harmanpreet"
+                      flex={true}
+                      alpha={false}
+                      stroke={false}
+                      width={true}
+                      weight={true}
+                      italic={true}
+                      textColor="#8c84fe"
+                      strokeColor="#ff0000"
+                      minFontSize={96}
+                    />
+                  </div>
+                  <div style={{ position: 'relative', height: '100px', width: '100%' }}>
+                    <TextPressure
+                      text="Singh"
+                      flex={true}
+                      alpha={false}
+                      stroke={false}
+                      width={true}
+                      weight={true}
+                      italic={true}
+                      textColor="#8c84fe"
+                      strokeColor="#ff0000"
+                      minFontSize={96}
+                    />
+                  </div>
+                </div>
+                {/* <div
+                  ref={containerRef}
+                  style={{ position: 'relative' }}
+                >
+                  <VariableProximity
+                    label={'Harmanpreet Singh'}
+                    className={'variable-proximity-demo text-first'}
+                    fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                    toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                    containerRef={containerRef}
+                    radius={200}
+                    falloff='linear'
+                  />
+                </div> */}
+
               </div>
               <div className='text-sm md:text-lg lg:text-xl justify-center lg:text-left max-w-[24rem] md:max-w-[32rem] text-center lg:max-w-[40rem]'>
-                <p>I specialize in building scalable and user-friendly web applications. Exploring the techscape with a designer's eye and a coder's heart, I create magic in the pixels.</p>
+                <TextEffect per='char' preset='fade'>
+                  I specialize in building scalable and user-friendly web applications. Exploring the techscape with a designer's eye and a coder's heart, I create magic in the pixels.
+                </TextEffect>
+                {/* <p>I specialize in building scalable and user-friendly web applications. Exploring the techscape with a designer's eye and a coder's heart, I create magic in the pixels.</p> */}
               </div>
               <div className='mt-4'>
                 <a
@@ -121,14 +198,3 @@ const Home = () => {
 
 export default Home;
 
-const BubbleText = () => {
-  return (
-    <h2 className="text-center text-4xl lg:text-6xl dark:font-thin font-bold  text-second">
-      {"Harmanpreet Singh".split("").map((child, idx) => (
-        <span className={`${styles.hoverText} duration-300 delay-200 transform transition-all min-w-1`} key={idx}>
-          {child}
-        </span>
-      ))}
-    </h2>
-  );
-};

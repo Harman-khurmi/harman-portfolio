@@ -77,7 +77,7 @@ const ProjectCarousel = () => {
                             <TooltipProvider delayDuration={180}>
                                 <Tooltip>
                                     <TooltipTrigger className='flex items-center gap-2'>
-                                        <BsGithub className='text-6xl dark:bg-dark bg-gray-200 hover:bg-first hover:text-white transition-colors duration-300 active:bg-first active:text-white hover:dark:bg-first hover:dark:text-dark p-3 rounded-full' />
+                                        <BsGithub className='lg:hover:animate-bounce hover:cursor-pointer text-6xl dark:bg-dark bg-gray-200 hover:bg-first hover:text-white transition-colors duration-300 active:bg-first active:text-white hover:dark:bg-first hover:dark:text-dark p-3 rounded-full' />
                                         {/* <span>GitHub</span> */}
                                     </TooltipTrigger>
                                     <TooltipContent>
@@ -92,7 +92,7 @@ const ProjectCarousel = () => {
                             <TooltipProvider delayDuration={180}>
                                 <Tooltip>
                                     <TooltipTrigger className='flex items-center gap-2'>
-                                        <BsArrowUpRight className='text-6xl dark:bg-dark bg-gray-200 hover:bg-first hover:text-white transition-colors duration-300 active:bg-first active:text-white hover:dark:bg-first hover:dark:text-dark p-3 rounded-full' />
+                                        <BsArrowUpRight className='lg:hover:animate-bounce hover:cursor-pointer text-6xl dark:bg-dark bg-gray-200 hover:bg-first hover:text-white transition-colors duration-300 active:bg-first active:text-white hover:dark:bg-first hover:dark:text-dark p-3 rounded-full' />
                                         {/* <span>Project Link</span> */}
                                     </TooltipTrigger>
                                     <TooltipContent>
