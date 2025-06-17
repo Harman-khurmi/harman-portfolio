@@ -85,8 +85,8 @@ const Home = () => {
                 </div>
 
                 {/* <div className='w-full hidden lg:grid place-content-center cursor-crosshair'><BubbleText /></div> */}
-                <div className='lg:flex gap-4 font-bold hidden'>
-                  <div style={{ position: 'relative', height: '100px', width: '100%' }}>
+               <div className='lg:flex gap-4 font-bold hidden'>
+                   {/* <div style={{ position: 'relative', height: '100px', width: '100%' }}>
                     <TextPressure
                       text="Harmanpreet"
                       flex={true}
@@ -114,8 +114,8 @@ const Home = () => {
                       minFontSize={96}
                     />
                   </div>
-                </div>
-                {/* <div
+                </div> */}
+                <div
                   ref={containerRef}
                   style={{ position: 'relative' }}
                 >
@@ -128,7 +128,8 @@ const Home = () => {
                     radius={200}
                     falloff='linear'
                   />
-                </div> */}
+                </div>
+                </div>
 
               </div>
               <div className='text-sm md:text-lg lg:text-xl justify-center lg:text-left max-w-[24rem] md:max-w-[32rem] text-center lg:max-w-[40rem]'>
