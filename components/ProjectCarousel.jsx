@@ -15,23 +15,33 @@ import WorkSliderBtns from './WorkSliderBtns';
 const projects = [
     {
         num: '01',
-        category: 'Web Development',
+        category: 'EnlightAI - Real-time Answer Generation Platform',
         title: 'Project One',
-        description: 'This is a description of project one. Some more text to make it longer and more descriptive.',
-        stack: [{ name: 'React', icon: '/react-icon.svg' }, { name: 'Node.js', icon: '/nodejs-icon.svg' }],
-        image: '/sample.jpeg',
-        github: '',
-        live: 'https://example.com/project1'
+        description: 'Built EnlightAI—a real-time AI chat platform with Gemini API integration, Auth0-powered signup, dark mode, chat history, front-end featuring prompt state management and skeleton loading.',
+        stack: [{ name: 'React.js'}, { name: 'TailwindCSS' }, { name: 'Auth0' }, { name: 'Gemini API' }, { name: 'Flowbite' }],
+        image: '/EnlightAI.png',
+        github: 'https://github.com/Harman-khurmi/EnlightAI',
+        live: 'https://enlight-ai.vercel.app/'
     },
     {
         num: '02',
-        category: 'Full Development',
+        category: 'Dawdle - Landing Page',
         title: 'Project One',
-        description: 'This is a description of project one.',
-        stack: [{ name: 'React', icon: '/react-icon.svg' }, { name: 'Node.js', icon: '/nodejs-icon.svg' }],
+        description: 'Built a high‑impact landing page designed and developed to create the online presence featuring smooth animations, enhancing user engagement and showcasing the business effectively.',
+        stack: [{ name: 'React.js' }, { name: 'TailwindCSS' }, { name: 'Framer Motion' }, { name: 'Figma' }],
         image: '/sample.jpeg',
+        github: 'https://github.com/Harman-khurmi/Dawdle-live-main',
+        live: 'https://dawdle-live-main.vercel.app/'
+    },
+    {
+        num: '03',
+        category: 'NexaAI - AI Business Landing Page',
+        title: 'Project One',
+        description: 'A fully crafted Figma file for NexaAI, an all-in-one AI automation platform. Instantly drop this responsive landing-page UI into your projects and customize it to your needs.',
+        stack: [ { name: 'Figma' } , { name: 'Adobe Illustrator' }],
+        image: '/NexaAI.png',
         github: '',
-        live: 'https://example.com/project1'
+        live: 'https://www.figma.com/community/file/1499168088089012437'
     },
 ]
 
@@ -44,7 +54,7 @@ const ProjectCarousel = () => {
     const swiper = useSwiper();
 
     return (
-        <div className='flex flex-col gap-6 lg:flex-row lg:gap-10  w-full h-full lg:px-10'>
+        <div className='flex flex-col gap-4 lg:flex-row lg:gap-10  w-full h-full lg:px-10'>
             <div className='flex flex-col order-2 lg:order-none lg:w-[50%] px-5 lg:px-0 gap-5 group'>
                 {/* project count */}
                 <div className='text-8xl font-bold text-first stroke-text group-hover:!text-third group-focus:!text-third duration-300 delay-150 transition-all ease-in-out'>
@@ -72,8 +82,9 @@ const ProjectCarousel = () => {
                 <div className='border'></div>
                 {/* buttons */}
                 <div className='flex gap-8 mt-4'>
+                    { project.github ? (
                     <div className='order-2'>
-                        <Link href={project.live} target='_blank' className='flex items-center gap-2'>
+                        <Link href={project.github} target='_blank' className='flex items-center gap-2'>
                             <TooltipProvider delayDuration={180}>
                                 <Tooltip>
                                     <TooltipTrigger className='flex items-center gap-2'>
@@ -87,6 +98,7 @@ const ProjectCarousel = () => {
                             </TooltipProvider>
                         </Link>
                     </div>
+                    ) : null}
                     <div>
                         <Link href={project.live} target='_blank' className='flex items-center gap-2'>
                             <TooltipProvider delayDuration={180}>
@@ -105,12 +117,12 @@ const ProjectCarousel = () => {
                 </div>
             </div>
             {/* SLIDER IMAGE */}
-            <div className='flex flex-col lg:w-[50%] w-full px-5 lg:px-0'>
+            <div className='flex flex-col lg:w-[50%] w-full h-110 px-5 lg:px-0'>
                 <Swiper spaceBetween={30} slidesPerView={1} onSlideChange={handleSlideChange} className='w-full h-full'>
                     {projects.map((project, index) => (
                         <SwiperSlide key={index} className='relative w-full h-full '>
                             <div className='object-fill w-full h-full relative'>
-                                <Image src={project.image} alt='work-image' width={96} height={96} className=' relative rounded-xl object-cover w-full h-90' />
+                                <Image src={project.image} alt='work-image' quality={100} placeholder="blur" blurDataURL="/tiny-blur.jpg" loading="lazy" width={1000} height={1000} className=' relative rounded-xl object-cover w-full h-96' />
                             </div>
                         </SwiperSlide>
                     ))}
