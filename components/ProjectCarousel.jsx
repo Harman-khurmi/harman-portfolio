@@ -72,7 +72,6 @@ const ProjectCarousel = () => {
                 <ul className='flex flex-wrap gap-1 mb-4'>
                     {project.stack.map((item, index) => (
                         <li key={index} className='flex items-center gap-2 text-first text-lg'>
-                            {/* <Image src={item.icon} alt={item.name} width={24} height={24} /> */}
                             <span>{item.name}{index !== project.stack.length - 1 && <span className=''> ,</span>}</span>
 
                         </li>

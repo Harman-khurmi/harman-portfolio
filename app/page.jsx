@@ -56,7 +56,7 @@ const Home = () => {
                 <SplitText
                   text="Hello, I'm"
                   delay={100}
-                  duration={0.7}
+                  duration={1}
                   ease="power3.out"
                   splitType="chars"
                   from={{ opacity: 0, y: 40 }}
