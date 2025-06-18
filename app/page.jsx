@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import styles from "./bubble.module.css";
 import { Button } from "@/components/ui/button"
 import { HiDownload } from "react-icons/hi";
 import { TypeAnimation } from 'react-type-animation';
@@ -67,20 +66,20 @@ const Home = () => {
 
                 />
 
-                <div className='lg:hidden flex flex-col items-center text-center font-extrabold text-second'>
+                <div className='lg:flex-row lg:gap-4 flex flex-col items-center text-center font-extrabold text-second'>
                   <BlurText
                     text="Harmanpreet"
-                    delay={100}
-                    animateBy="letters"
-                    direction="top"
-                    className="text-4xl md:text-5xl"
-                  />
-                  <BlurText
-                    text="Singh"
                     delay={150}
                     animateBy="letters"
                     direction="top"
-                    className="text-4xl md:text-5xl"
+                    className="text-4xl md:text-5xl lg:text-6xl"
+                  />
+                  <BlurText
+                    text="Singh"
+                    delay={200}
+                    animateBy="letters"
+                    direction="top"
+                    className="text-4xl md:text-5xl lg:text-6xl"
                   />
                 </div>
 
@@ -115,7 +114,7 @@ const Home = () => {
                     />
                   </div>
                 </div> */}
-                <div
+                {/* <div
                   ref={containerRef}
                   style={{ position: 'relative' }}
                 >
@@ -128,7 +127,7 @@ const Home = () => {
                     radius={200}
                     falloff='linear'
                   />
-                </div>
+                </div> */}
                 </div>
 
               </div>
