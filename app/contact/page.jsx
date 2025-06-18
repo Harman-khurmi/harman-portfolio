@@ -20,7 +20,7 @@ const contact = () => {
         animate={{ opacity: 1, transition: { duration: 0.4, delay: 0.4, ease: easeInOut } }}
         className='mt-8 container mx-auto'
       >
-        <div className='flex flex-col lg:flex-row items-center justify-center lg:items-start lg:justify-center'>
+        <div className='flex flex-col lg:flex-row items-center justify-center lg:items-start lg:justify-center lg:mx-16 md:mx-10'>
           <div className='lg:w-[40%]  w-full px-10 lg:px-0 flex flex-col items-center justify-baseline gap-4'>
             <Image src="/contact.svg"
               height={400}

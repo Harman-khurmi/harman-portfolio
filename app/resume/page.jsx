@@ -37,7 +37,7 @@ const getIconComponent = (library, iconName) => {
 
 const resume = () => {
   return (
-    <section className='text-dark dark:text-light flex lg:mx-6'>
+    <section className='text-dark dark:text-light flex lg:mx-16 md:mx-10'>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.4, delay: 0.4, ease: easeInOut } }}

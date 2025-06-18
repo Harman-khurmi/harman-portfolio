@@ -33,7 +33,7 @@ const Home = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: easeInOut } }}
       >
-        <section className='h-full text-dark dark:text-light flex lg:mx-6'>
+        <section className='h-full text-dark dark:text-light flex lg:mx-16 md:mx-12'>
 
           <div className='flex lg:flex-row flex-col gap-10 lg:gap-1 mx-6 md:container items-center lg:items-start md:mx-auto lg:justify-evenly mt-12'>
             <div className='order-2 lg:order-none gap-6 flex flex-col items-center lg:items-start'>
@@ -66,7 +66,7 @@ const Home = () => {
 
                 />
 
-                <div className='lg:flex-row lg:gap-4 flex flex-col items-center text-center font-extrabold text-second'>
+                <div className='md:flex-row md:gap-4 flex flex-col items-center text-center font-extrabold text-second'>
                   <BlurText
                     text="Harmanpreet"
                     delay={150}
